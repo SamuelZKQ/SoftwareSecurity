@@ -1,0 +1,750 @@
+{
+    "errors": [
+        {
+            "code": 3,
+            "level": "warn",
+            "message": "Syntax error at line .github/workflows/downstream.yml:29:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+            "path": ".github/workflows/downstream.yml",
+            "spans": [
+                {
+                    "end": {
+                        "col": 35,
+                        "line": 29,
+                        "offset": 681
+                    },
+                    "file": ".github/workflows/downstream.yml",
+                    "start": {
+                        "col": 32,
+                        "line": 29,
+                        "offset": 678
+                    }
+                }
+            ],
+            "type": [
+                "PartialParsing",
+                [
+                    {
+                        "end": {
+                            "col": 35,
+                            "line": 29,
+                            "offset": 681
+                        },
+                        "path": ".github/workflows/downstream.yml",
+                        "start": {
+                            "col": 32,
+                            "line": 29,
+                            "offset": 678
+                        }
+                    }
+                ]
+            ]
+        },
+        {
+            "code": 3,
+            "level": "warn",
+            "message": "Syntax error at line .github/workflows/changelog.yml:24:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+            "path": ".github/workflows/changelog.yml",
+            "spans": [
+                {
+                    "end": {
+                        "col": 70,
+                        "line": 24,
+                        "offset": 626
+                    },
+                    "file": ".github/workflows/changelog.yml",
+                    "start": {
+                        "col": 67,
+                        "line": 24,
+                        "offset": 623
+                    }
+                }
+            ],
+            "type": [
+                "PartialParsing",
+                [
+                    {
+                        "end": {
+                            "col": 70,
+                            "line": 24,
+                            "offset": 626
+                        },
+                        "path": ".github/workflows/changelog.yml",
+                        "start": {
+                            "col": 67,
+                            "line": 24,
+                            "offset": 623
+                        }
+                    }
+                ]
+            ]
+        },
+        {
+            "code": 3,
+            "level": "warn",
+            "message": "Syntax error at line .github/workflows/publish.yml:88:\n When parsing a snippet as Bash for metavariable-pattern in rule 'yaml.github-actions.security.curl-eval.curl-eval', `${{` was unexpected",
+            "path": ".github/workflows/publish.yml",
+            "spans": [
+                {
+                    "end": {
+                        "col": 34,
+                        "line": 88,
+                        "offset": 2454
+                    },
+                    "file": ".github/workflows/publish.yml",
+                    "start": {
+                        "col": 31,
+                        "line": 88,
+                        "offset": 2451
+                    }
+                },
+                {
+                    "end": {
+                        "col": 71,
+                        "line": 88,
+                        "offset": 2454
+                    },
+                    "file": ".github/workflows/publish.yml",
+                    "start": {
+                        "col": 68,
+                        "line": 88,
+                        "offset": 2451
+                    }
+                }
+            ],
+            "type": [
+                "PartialParsing",
+                [
+                    {
+                        "end": {
+                            "col": 34,
+                            "line": 88,
+                            "offset": 2454
+                        },
+                        "path": ".github/workflows/publish.yml",
+                        "start": {
+                            "col": 31,
+                            "line": 88,
+                            "offset": 2451
+                        }
+                    },
+                    {
+                        "end": {
+                            "col": 71,
+                            "line": 88,
+                            "offset": 2454
+                        },
+                        "path": ".github/workflows/publish.yml",
+                        "start": {
+                            "col": 68,
+                            "line": 88,
+                            "offset": 2451
+                        }
+                    }
+                ]
+            ]
+        }
+    ],
+    "interfile_languages_used": [],
+    "paths": {
+        "scanned": [
+            ".coveragerc",
+            ".eslintrc.yml",
+            ".github/CODEOWNERS",
+            ".github/FUNDING.yml",
+            ".github/ISSUE_TEMPLATE/01_feature_request.md",
+            ".github/ISSUE_TEMPLATE/02_bug_report.md",
+            ".github/ISSUE_TEMPLATE/config.yml",
+            ".github/PULL_REQUEST_TEMPLATE/release.md",
+            ".github/PULL_REQUEST_TEMPLATE.md",
+            ".github/SECURITY.md",
+            ".github/codeql.yml",
+            ".github/dependabot.yml",
+            ".github/workflows/changelog.yml",
+            ".github/workflows/ci.yml",
+            ".github/workflows/codeql.yml",
+            ".github/workflows/downstream.yml",
+            ".github/workflows/lint.yml",
+            ".github/workflows/publish.yml",
+            ".github/workflows/scorecards.yml",
+            ".gitignore",
+            ".pre-commit-config.yaml",
+            ".readthedocs.yml",
+            "CHANGES.rst",
+            "CODE_OF_CONDUCT.md",
+            "LICENSE.txt",
+            "README.md",
+            "changelog/.gitignore",
+            "changelog/README.rst",
+            "ci/deploy.sh",
+            "dev-requirements.txt",
+            "docs/Makefile",
+            "docs/_static/banner.svg",
+            "docs/_static/banner_github.svg",
+            "docs/_static/dark-logo.svg",
+            "docs/advanced-usage.rst",
+            "docs/changelog.rst",
+            "docs/conf.py",
+            "docs/contributing.rst",
+            "docs/images/demo-button.png",
+            "docs/images/favicon.png",
+            "docs/images/learn-more-button.png",
+            "docs/images/logo.png",
+            "docs/images/logo.svg",
+            "docs/index.rst",
+            "docs/make.bat",
+            "docs/reference/contrib/emscripten.rst",
+            "docs/reference/contrib/index.rst",
+            "docs/reference/contrib/pyopenssl.rst",
+            "docs/reference/contrib/socks.rst",
+            "docs/reference/index.rst",
+            "docs/reference/urllib3.connection.rst",
+            "docs/reference/urllib3.connectionpool.rst",
+            "docs/reference/urllib3.exceptions.rst",
+            "docs/reference/urllib3.fields.rst",
+            "docs/reference/urllib3.poolmanager.rst",
+            "docs/reference/urllib3.request.rst",
+            "docs/reference/urllib3.response.rst",
+            "docs/reference/urllib3.util.rst",
+            "docs/requirements.txt",
+            "docs/sponsors.rst",
+            "docs/user-guide.rst",
+            "docs/v2-migration-guide.rst",
+            "dummyserver/__init__.py",
+            "dummyserver/app.py",
+            "dummyserver/asgi_proxy.py",
+            "dummyserver/certs/README.rst",
+            "dummyserver/certs/cacert.key",
+            "dummyserver/certs/cacert.pem",
+            "dummyserver/certs/server.crt",
+            "dummyserver/certs/server.key",
+            "dummyserver/hypercornserver.py",
+            "dummyserver/socketserver.py",
+            "dummyserver/testcase.py",
+            "emscripten-requirements.txt",
+            "mypy-requirements.txt",
+            "notes/connection-lifecycle.md",
+            "notes/public-and-private-apis.md",
+            "noxfile.py",
+            "pyproject.toml",
+            "setup.cfg",
+            "src/urllib3/__init__.py",
+            "src/urllib3/_base_connection.py",
+            "src/urllib3/_collections.py",
+            "src/urllib3/_request_methods.py",
+            "src/urllib3/connection.py",
+            "src/urllib3/connectionpool.py",
+            "src/urllib3/contrib/__init__.py",
+            "src/urllib3/contrib/emscripten/__init__.py",
+            "src/urllib3/contrib/emscripten/connection.py",
+            "src/urllib3/contrib/emscripten/emscripten_fetch_worker.js",
+            "src/urllib3/contrib/emscripten/fetch.py",
+            "src/urllib3/contrib/emscripten/request.py",
+            "src/urllib3/contrib/emscripten/response.py",
+            "src/urllib3/contrib/pyopenssl.py",
+            "src/urllib3/contrib/socks.py",
+            "src/urllib3/exceptions.py",
+            "src/urllib3/fields.py",
+            "src/urllib3/filepost.py",
+            "src/urllib3/http2/__init__.py",
+            "src/urllib3/http2/connection.py",
+            "src/urllib3/http2/probe.py",
+            "src/urllib3/poolmanager.py",
+            "src/urllib3/py.typed",
+            "src/urllib3/response.py",
+            "src/urllib3/util/__init__.py",
+            "src/urllib3/util/connection.py",
+            "src/urllib3/util/proxy.py",
+            "src/urllib3/util/request.py",
+            "src/urllib3/util/response.py",
+            "src/urllib3/util/retry.py",
+            "src/urllib3/util/ssl_.py",
+            "src/urllib3/util/ssl_match_hostname.py",
+            "src/urllib3/util/ssltransport.py",
+            "src/urllib3/util/timeout.py",
+            "src/urllib3/util/url.py",
+            "src/urllib3/util/util.py",
+            "src/urllib3/util/wait.py",
+            "towncrier.toml"
+        ]
+    },
+    "results": [
+        {
+            "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+            "end": {
+                "col": 28,
+                "line": 2,
+                "offset": 59
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "70a9bb75cca8aa497b1a6375923cb27053e870c21b634c046c51c189d2491f7fd92cbde3bc99255588ddd5035f285cb2e3426a304baf9a762d673f205efe8e47_0",
+                "is_ignored": false,
+                "lines": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAn330NEISY7w+GeZR2jh8Of1x2CtpenWRKuuD2u4FOaN0G1SN",
+                "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9070,
+                            "rule_id": "7KUQ0p",
+                            "rv_id": 833786,
+                            "url": "https://semgrep.dev/playground/r/vdTOzge/generic.secrets.security.detected-private-key.detected-private-key",
+                            "version_id": "vdTOzge"
+                        }
+                    },
+                    "shortlink": "https://sg.run/b7dr",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+                    "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 4,
+                            "line": 1,
+                            "offset": 3
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$KEY": {
+                        "abstract_content": "MIIEpAIBAAKCAQEAn330NEISY7w",
+                        "end": {
+                            "col": 28,
+                            "line": 2,
+                            "offset": 59
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 2,
+                            "offset": 32
+                        }
+                    },
+                    "$TYPE": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 15,
+                            "line": 1,
+                            "offset": 14
+                        },
+                        "start": {
+                            "col": 12,
+                            "line": 1,
+                            "offset": 11
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "dummyserver/certs/cacert.key",
+            "start": {
+                "col": 1,
+                "line": 1,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+            "end": {
+                "col": 22,
+                "line": 2,
+                "offset": 53
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "21893360d3d1ebecdb7c8ec631482aff3489d8c85a6bed7a8c18332423c85114d3af7e8907f4c7c2c190667791208daea669b7a46a4413739ebe568a9864156b_0",
+                "is_ignored": false,
+                "lines": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpQIBAAKCAQEArRLZX+5dyCh4N7q90sH2Q4Ea6QLK8OfoUQPWtpzAtINDUAdf",
+                "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9070,
+                            "rule_id": "7KUQ0p",
+                            "rv_id": 833786,
+                            "url": "https://semgrep.dev/playground/r/vdTOzge/generic.secrets.security.detected-private-key.detected-private-key",
+                            "version_id": "vdTOzge"
+                        }
+                    },
+                    "shortlink": "https://sg.run/b7dr",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+                    "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 4,
+                            "line": 1,
+                            "offset": 3
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$KEY": {
+                        "abstract_content": "MIIEpQIBAAKCAQEArRLZX",
+                        "end": {
+                            "col": 22,
+                            "line": 2,
+                            "offset": 53
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 2,
+                            "offset": 32
+                        }
+                    },
+                    "$TYPE": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 15,
+                            "line": 1,
+                            "offset": 14
+                        },
+                        "start": {
+                            "col": 12,
+                            "line": 1,
+                            "offset": 11
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "dummyserver/certs/server.key",
+            "start": {
+                "col": 1,
+                "line": 1,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "python.lang.compatibility.python37.python37-compatibility-importlib2",
+            "end": {
+                "col": 38,
+                "line": 31,
+                "offset": 1369
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "f21087366a112f083cc01f5385f2851d256b437d9f680830b39b14dde8b96c6eba8ac55fce9b976f9b84802060aa7494da70bfc4b94e9f31898207077120510b_0",
+                "is_ignored": false,
+                "lines": "from importlib.resources import files",
+                "message": "Found 'importlib.resources', which is a module only available on Python 3.7+. This does not work in lower versions, and therefore is not backwards compatible. Use importlib_resources instead for older Python versions.",
+                "metadata": {
+                    "category": "compatibility",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9576,
+                            "rule_id": "L1Uy0n",
+                            "rv_id": 834533,
+                            "url": "https://semgrep.dev/playground/r/w8TAb6r/python.lang.compatibility.python37.python37-compatibility-importlib2",
+                            "version_id": "w8TAb6r"
+                        }
+                    },
+                    "shortlink": "https://sg.run/eL3y",
+                    "source": "https://semgrep.dev/r/python.lang.compatibility.python37.python37-compatibility-importlib2",
+                    "technology": [
+                        "python"
+                    ]
+                },
+                "metavars": {},
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "src/urllib3/contrib/emscripten/fetch.py",
+            "start": {
+                "col": 1,
+                "line": 31,
+                "offset": 1332
+            }
+        },
+        {
+            "check_id": "python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+            "end": {
+                "col": 23,
+                "line": 73,
+                "offset": 2247
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "1db9a4a46ecef839715835e6f7601c1484a2de60230ec6b5cfeae66d3890df934e8ff70b0f64a089a0151dc9df9a88d5dcd985938bf3f11416f7afee69ca18e5_0",
+                "is_ignored": false,
+                "lines": "    ssl.PROTOCOL_TLSv1: OpenSSL.SSL.TLSv1_METHOD,",
+                "message": "An insecure SSL version was detected. TLS versions 1.0, 1.1, and all SSL versions are considered weak encryption and are deprecated. Use 'ssl.PROTOCOL_TLSv1_2' or higher.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "9.1.3 Weak TLS",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+                        "section": "V9 Communications Verification Requirements",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-326: Inadequate Encryption Strength"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://tools.ietf.org/html/rfc7568",
+                        "https://tools.ietf.org/id/draft-ietf-tls-oldversions-deprecate-02.html",
+                        "https://docs.python.org/3/library/ssl.html#ssl.PROTOCOL_TLSv1_2"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9649,
+                            "rule_id": "KxUbNG",
+                            "rv_id": 834653,
+                            "url": "https://semgrep.dev/playground/r/GxTDX0Y/python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+                            "version_id": "GxTDX0Y"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RoZO",
+                    "source": "https://semgrep.dev/r/python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+                    "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/plugins/insecure_ssl_tls.py#L30",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "python"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "src/urllib3/contrib/pyopenssl.py",
+            "start": {
+                "col": 5,
+                "line": 73,
+                "offset": 2229
+            }
+        },
+        {
+            "check_id": "python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+            "end": {
+                "col": 43,
+                "line": 77,
+                "offset": 2400
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "1db9a4a46ecef839715835e6f7601c1484a2de60230ec6b5cfeae66d3890df934e8ff70b0f64a089a0151dc9df9a88d5dcd985938bf3f11416f7afee69ca18e5_1",
+                "is_ignored": false,
+                "lines": "    _openssl_versions[ssl.PROTOCOL_TLSv1_1] = OpenSSL.SSL.TLSv1_1_METHOD",
+                "message": "An insecure SSL version was detected. TLS versions 1.0, 1.1, and all SSL versions are considered weak encryption and are deprecated. Use 'ssl.PROTOCOL_TLSv1_2' or higher.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "9.1.3 Weak TLS",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+                        "section": "V9 Communications Verification Requirements",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-326: Inadequate Encryption Strength"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://tools.ietf.org/html/rfc7568",
+                        "https://tools.ietf.org/id/draft-ietf-tls-oldversions-deprecate-02.html",
+                        "https://docs.python.org/3/library/ssl.html#ssl.PROTOCOL_TLSv1_2"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9649,
+                            "rule_id": "KxUbNG",
+                            "rv_id": 834653,
+                            "url": "https://semgrep.dev/playground/r/GxTDX0Y/python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+                            "version_id": "GxTDX0Y"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RoZO",
+                    "source": "https://semgrep.dev/r/python.lang.security.audit.weak-ssl-version.weak-ssl-version",
+                    "source-rule-url": "https://github.com/PyCQA/bandit/blob/b1411bfb43795d3ffd268bef17a839dee954c2b1/bandit/plugins/insecure_ssl_tls.py#L30",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "python"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "src/urllib3/contrib/pyopenssl.py",
+            "start": {
+                "col": 23,
+                "line": 77,
+                "offset": 2380
+            }
+        },
+        {
+            "check_id": "python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+            "end": {
+                "col": 37,
+                "line": 305,
+                "offset": 11352
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "9f8c69c131aff5ce06fc5f62aeb11457bd5fac9548200b60375e9ff060a4e852879fd271a6b4809e8bf9d7769681308779d12e27b1894c73e6639e2d17e31736_0",
+                "is_ignored": false,
+                "lines": "        context.set_ciphers(ciphers)",
+                "message": "The 'ssl' module disables insecure cipher suites by default. Therefore, use of 'set_ciphers()' should only be used when you have very specialized requirements. Otherwise, you risk lowering the security of the SSL channel.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "9.1.3 Weak TLS",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x17-V9-Communications.md#v91-client-communications-security-requirements",
+                        "section": "V9 Communications Verification Requirements",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-326: Inadequate Encryption Strength"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://docs.python.org/3/library/ssl.html#cipher-selection",
+                        "https://docs.python.org/3/library/ssl.html#ssl.SSLContext.set_ciphers"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9654,
+                            "rule_id": "oqUeYJ",
+                            "rv_id": 834619,
+                            "url": "https://semgrep.dev/playground/r/YDTlbR1/python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+                            "version_id": "YDTlbR1"
+                        }
+                    },
+                    "shortlink": "https://sg.run/0Q0v",
+                    "source": "https://semgrep.dev/r/python.lang.security.audit.insecure-transport.ssl.no-set-ciphers.no-set-ciphers",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "ssl"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$CONTEXT": {
+                        "abstract_content": "context",
+                        "end": {
+                            "col": 16,
+                            "line": 305,
+                            "offset": 11331
+                        },
+                        "start": {
+                            "col": 9,
+                            "line": 305,
+                            "offset": 11324
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "src/urllib3/util/ssl_.py",
+            "start": {
+                "col": 9,
+                "line": 305,
+                "offset": 11324
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.58.0"
+}
