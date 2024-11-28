@@ -1,0 +1,2153 @@
+{
+    "results": [
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 117,
+                "line": 53,
+                "offset": 2022
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "8962bd769865838e30e0d7160e5340c42888691967c8e046f3d42a9d32c5eeb6c2ba711a5e42f7da5b6ff79d979053fcb68038bb8dfef5dbdf2e73fff52f4b69_0",
+                "is_ignored": false,
+                "lines": "                    <!--<script data-plotly=\"realestateinvestment:2\"  src=\"https://plot.ly/embed.js\" async></script>-->",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " data-plotly=\"realestateinvestment:2\"  src=\"https://plot.ly/embed.js\" async",
+                        "end": {
+                            "col": 107,
+                            "line": 53,
+                            "offset": 2012
+                        },
+                        "start": {
+                            "col": 32,
+                            "line": 53,
+                            "offset": 1937
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/client/modules/outputgraph/outputgraph.component.html",
+            "start": {
+                "col": 25,
+                "line": 53,
+                "offset": 1930
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 116,
+                "line": 2786,
+                "offset": 76511
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "types",
+                            "location": {
+                                "end": {
+                                    "col": 31,
+                                    "line": 2757,
+                                    "offset": 75444
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 26,
+                                    "line": 2757,
+                                    "offset": 75439
+                                }
+                            }
+                        },
+                        {
+                            "content": "tns",
+                            "location": {
+                                "end": {
+                                    "col": 7,
+                                    "line": 2770,
+                                    "offset": 75884
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 4,
+                                    "line": 2770,
+                                    "offset": 75881
+                                }
+                            }
+                        },
+                        {
+                            "content": "namespaces",
+                            "location": {
+                                "end": {
+                                    "col": 14,
+                                    "line": 2772,
+                                    "offset": 75968
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 4,
+                                    "line": 2772,
+                                    "offset": 75958
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 116,
+                                    "line": 2786,
+                                    "offset": 76511
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 30,
+                                    "line": 2786,
+                                    "offset": 76425
+                                }
+                            },
+                            "new RegExp(\"(^|\\\\.)\" + namespaces.split(\".\").sort().join(\"\\\\.(?:.*\\\\.|)\") + \"(\\\\.|$)\")"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 31,
+                                    "line": 2757,
+                                    "offset": 75444
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 26,
+                                    "line": 2757,
+                                    "offset": 75439
+                                }
+                            },
+                            "types"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "728403532c587eef41e33d2e92823674619941062f2004e7c422587e6c34e52d68964d33b1cec8f553e07b11a931003cbba596fb804e76ccd5a9c929cb81457b_0",
+                "is_ignored": false,
+                "lines": "\t\t\tnamespaces = namespaces ? new RegExp(\"(^|\\\\.)\" + namespaces.split(\".\").sort().join(\"\\\\.(?:.*\\\\.|)\") + \"(\\\\.|$)\") : null;",
+                "message": "RegExp() called with a `types` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 12685,
+                            "rule_id": "zdU1gD",
+                            "rv_id": 834140,
+                            "url": "https://semgrep.dev/playground/r/8KTGkZw/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                            "version_id": "8KTGkZw"
+                        }
+                    },
+                    "shortlink": "https://sg.run/gr65",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "javascript"
+                    ],
+                    "vulnerability_class": [
+                        "Denial-of-Service (DoS)"
+                    ]
+                },
+                "metavars": {
+                    "$ARG": {
+                        "abstract_content": "types",
+                        "end": {
+                            "col": 31,
+                            "line": 2757,
+                            "offset": 75444
+                        },
+                        "start": {
+                            "col": 26,
+                            "line": 2757,
+                            "offset": 75439
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 30,
+                "line": 2786,
+                "offset": 76425
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 109,
+                "line": 2883,
+                "offset": 79649
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "event",
+                            "location": {
+                                "end": {
+                                    "col": 26,
+                                    "line": 2836,
+                                    "offset": 78096
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 21,
+                                    "line": 2836,
+                                    "offset": 78091
+                                }
+                            }
+                        },
+                        {
+                            "content": "type",
+                            "location": {
+                                "end": {
+                                    "col": 8,
+                                    "line": 2844,
+                                    "offset": 78378
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 4,
+                                    "line": 2844,
+                                    "offset": 78374
+                                }
+                            }
+                        },
+                        {
+                            "content": "namespaces",
+                            "location": {
+                                "end": {
+                                    "col": 14,
+                                    "line": 2860,
+                                    "offset": 78864
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 4,
+                                    "line": 2860,
+                                    "offset": 78854
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 109,
+                                    "line": 2883,
+                                    "offset": 79649
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 41,
+                                    "line": 2883,
+                                    "offset": 79581
+                                }
+                            },
+                            "new RegExp(\"(^|\\\\.)\" + namespaces.join(\"\\\\.(?:.*\\\\.|)\") + \"(\\\\.|$)\")"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 26,
+                                    "line": 2836,
+                                    "offset": 78096
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 21,
+                                    "line": 2836,
+                                    "offset": 78091
+                                }
+                            },
+                            "event"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "33100f23843142f9365f154100c66f6cc147deb777dd92b895e4b4524eb688541578ba8503a19dda720e3e2bdcc0f8f3f4bc2fb7bd0f0644046ea93a969bfbd0_0",
+                "is_ignored": false,
+                "lines": "\t\tevent.namespace_re = event.namespace? new RegExp(\"(^|\\\\.)\" + namespaces.join(\"\\\\.(?:.*\\\\.|)\") + \"(\\\\.|$)\") : null;",
+                "message": "RegExp() called with a `event` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 12685,
+                            "rule_id": "zdU1gD",
+                            "rv_id": 834140,
+                            "url": "https://semgrep.dev/playground/r/8KTGkZw/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                            "version_id": "8KTGkZw"
+                        }
+                    },
+                    "shortlink": "https://sg.run/gr65",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "javascript"
+                    ],
+                    "vulnerability_class": [
+                        "Denial-of-Service (DoS)"
+                    ]
+                },
+                "metavars": {
+                    "$ARG": {
+                        "abstract_content": "event",
+                        "end": {
+                            "col": 26,
+                            "line": 2836,
+                            "offset": 78096
+                        },
+                        "start": {
+                            "col": 21,
+                            "line": 2836,
+                            "offset": 78091
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 41,
+                "line": 2883,
+                "offset": 79581
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 86,
+                "line": 3849,
+                "offset": 109398
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e50f032b3a6ed31d0d06d8d6c0f312ae51bc7d6196681372fc717ad101a191085dfe57341a704fd2e06fadba66038639c2e474e597ca4985c42bea58d89aa4cc_0",
+                "is_ignored": false,
+                "lines": "\t\tdiv.innerHTML = \"<a name='\" + expando + \"'></a><div name='\" + expando + \"'></div>\";",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "div",
+                        "end": {
+                            "col": 6,
+                            "line": 3849,
+                            "offset": 109318
+                        },
+                        "start": {
+                            "col": 3,
+                            "line": 3849,
+                            "offset": 109315
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "\"<a name='\"+expando+\"'></a><div name='\"+expando+\"'></div>\"",
+                        "end": {
+                            "col": 85,
+                            "line": 3849,
+                            "offset": 109397
+                        },
+                        "start": {
+                            "col": 19,
+                            "line": 3849,
+                            "offset": 109331
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 3,
+                "line": 3849,
+                "offset": 109315
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 93,
+                "line": 4261,
+                "offset": 120687
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "className",
+                            "location": {
+                                "end": {
+                                    "col": 31,
+                                    "line": 4257,
+                                    "offset": 120505
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 22,
+                                    "line": 4257,
+                                    "offset": 120496
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 93,
+                                    "line": 4261,
+                                    "offset": 120687
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 16,
+                                    "line": 4261,
+                                    "offset": 120610
+                                }
+                            },
+                            "new RegExp( \"(^|\" + whitespace + \")\" + className + \"(\" + whitespace + \"|$)\" )"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 31,
+                                    "line": 4257,
+                                    "offset": 120505
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 22,
+                                    "line": 4257,
+                                    "offset": 120496
+                                }
+                            },
+                            "className"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "148651dbbe0dc3243ab6c2dc57a9a7f5b39ec79f2afe967d93bd6c5202383d95388f08cc8f3a34b8e3ecc7b469e8cfb2b35c0d14230e26c928308a345a202f17_0",
+                "is_ignored": false,
+                "lines": "\t\t\t\t(pattern = new RegExp( \"(^|\" + whitespace + \")\" + className + \"(\" + whitespace + \"|$)\" )) &&",
+                "message": "RegExp() called with a `className` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 12685,
+                            "rule_id": "zdU1gD",
+                            "rv_id": 834140,
+                            "url": "https://semgrep.dev/playground/r/8KTGkZw/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                            "version_id": "8KTGkZw"
+                        }
+                    },
+                    "shortlink": "https://sg.run/gr65",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "javascript"
+                    ],
+                    "vulnerability_class": [
+                        "Denial-of-Service (DoS)"
+                    ]
+                },
+                "metavars": {
+                    "$ARG": {
+                        "abstract_content": "className",
+                        "end": {
+                            "col": 31,
+                            "line": 4257,
+                            "offset": 120505
+                        },
+                        "start": {
+                            "col": 22,
+                            "line": 4257,
+                            "offset": 120496
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 16,
+                "line": 4261,
+                "offset": 120610
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 34,
+                "line": 4754,
+                "offset": 133634
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4df9fcc50688db91047afd2fd99b0ed8959075af2c5269011279a0bae0240260a0aef6fb4004b0e64eac95427b6c2d135aa3360178d940cfd726eb98c067f84c_0",
+                "is_ignored": false,
+                "lines": "\t\t\twhile ( (elem = elem[ dir ]) ) {",
+                "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13373,
+                            "rule_id": "QrUpbJ",
+                            "rv_id": 834148,
+                            "url": "https://semgrep.dev/playground/r/GxTDERG/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                            "version_id": "GxTDERG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/w1DB",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "typescript"
+                    ],
+                    "vulnerability_class": [
+                        "Mass Assignment"
+                    ]
+                },
+                "metavars": {
+                    "$A": {
+                        "abstract_content": "dir",
+                        "end": {
+                            "col": 29,
+                            "line": 4754,
+                            "offset": 133629
+                        },
+                        "start": {
+                            "col": 26,
+                            "line": 4754,
+                            "offset": 133626
+                        }
+                    },
+                    "$SMTH": {
+                        "abstract_content": "elem",
+                        "end": {
+                            "col": 17,
+                            "line": 4754,
+                            "offset": 133617
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "elem[dir]",
+                            "svalue_end": {
+                                "col": 31,
+                                "line": 4754,
+                                "offset": 133631
+                            },
+                            "svalue_start": {
+                                "col": 20,
+                                "line": 4754,
+                                "offset": 133620
+                            }
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 4754,
+                            "offset": 133613
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 10,
+                "line": 4754,
+                "offset": 133610
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 35,
+                "line": 4768,
+                "offset": 134089
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4df9fcc50688db91047afd2fd99b0ed8959075af2c5269011279a0bae0240260a0aef6fb4004b0e64eac95427b6c2d135aa3360178d940cfd726eb98c067f84c_1",
+                "is_ignored": false,
+                "lines": "\t\t\t\twhile ( (elem = elem[ dir ]) ) {",
+                "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13373,
+                            "rule_id": "QrUpbJ",
+                            "rv_id": 834148,
+                            "url": "https://semgrep.dev/playground/r/GxTDERG/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                            "version_id": "GxTDERG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/w1DB",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "typescript"
+                    ],
+                    "vulnerability_class": [
+                        "Mass Assignment"
+                    ]
+                },
+                "metavars": {
+                    "$A": {
+                        "abstract_content": "dir",
+                        "end": {
+                            "col": 30,
+                            "line": 4768,
+                            "offset": 134084
+                        },
+                        "start": {
+                            "col": 27,
+                            "line": 4768,
+                            "offset": 134081
+                        }
+                    },
+                    "$SMTH": {
+                        "abstract_content": "elem",
+                        "end": {
+                            "col": 18,
+                            "line": 4768,
+                            "offset": 134072
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "elem[dir]",
+                            "svalue_end": {
+                                "col": 32,
+                                "line": 4768,
+                                "offset": 134086
+                            },
+                            "svalue_start": {
+                                "col": 21,
+                                "line": 4768,
+                                "offset": 134075
+                            }
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 4768,
+                            "offset": 134068
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 11,
+                "line": 4768,
+                "offset": 134065
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 35,
+                "line": 4787,
+                "offset": 134634
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4df9fcc50688db91047afd2fd99b0ed8959075af2c5269011279a0bae0240260a0aef6fb4004b0e64eac95427b6c2d135aa3360178d940cfd726eb98c067f84c_2",
+                "is_ignored": false,
+                "lines": "\t\t\t\twhile ( (elem = elem[ dir ]) ) {",
+                "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13373,
+                            "rule_id": "QrUpbJ",
+                            "rv_id": 834148,
+                            "url": "https://semgrep.dev/playground/r/GxTDERG/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                            "version_id": "GxTDERG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/w1DB",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "typescript"
+                    ],
+                    "vulnerability_class": [
+                        "Mass Assignment"
+                    ]
+                },
+                "metavars": {
+                    "$A": {
+                        "abstract_content": "dir",
+                        "end": {
+                            "col": 30,
+                            "line": 4787,
+                            "offset": 134629
+                        },
+                        "start": {
+                            "col": 27,
+                            "line": 4787,
+                            "offset": 134626
+                        }
+                    },
+                    "$SMTH": {
+                        "abstract_content": "elem",
+                        "end": {
+                            "col": 18,
+                            "line": 4787,
+                            "offset": 134617
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "elem[dir]",
+                            "svalue_end": {
+                                "col": 32,
+                                "line": 4787,
+                                "offset": 134631
+                            },
+                            "svalue_start": {
+                                "col": 21,
+                                "line": 4787,
+                                "offset": 134620
+                            }
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 4787,
+                            "offset": 134613
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 11,
+                "line": 4787,
+                "offset": 134610
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 18,
+                "line": 5597,
+                "offset": 157954
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "b29f67827f45aebef3bd2373851c3b4c11cbc152f054e85b16c9f50f2f9fdd93c2f457a6e8b5f4cad285746913cac244c405359d200b4e308254a9e987bf785f_0",
+                "is_ignored": false,
+                "lines": "\t\t\tcur = cur[dir];",
+                "message": "Possibility of prototype polluting function detected. By adding or modifying attributes of an object prototype, it is possible to create attributes that exist on every object, or replace critical attributes with malicious ones. This can be problematic if the software depends on existence or non-existence of certain attributes, or uses pre-defined attributes of object prototype (such as hasOwnProperty, toString or valueOf). Possible mitigations might be: freezing the object prototype, using an object without prototypes (via Object.create(null) ), blocking modifications of attributes that resolve to object prototype, using Map instead of object.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-915: Improperly Controlled Modification of Dynamically-Determined Object Attributes"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://github.com/HoLyVieR/prototype-pollution-nsec18/blob/master/paper/JavaScript_prototype_pollution_attack_in_NodeJS.pdf"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13373,
+                            "rule_id": "QrUpbJ",
+                            "rv_id": 834148,
+                            "url": "https://semgrep.dev/playground/r/GxTDERG/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                            "version_id": "GxTDERG"
+                        }
+                    },
+                    "shortlink": "https://sg.run/w1DB",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.prototype-pollution.prototype-pollution-loop.prototype-pollution-loop",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "typescript"
+                    ],
+                    "vulnerability_class": [
+                        "Mass Assignment"
+                    ]
+                },
+                "metavars": {
+                    "$A": {
+                        "abstract_content": "dir",
+                        "end": {
+                            "col": 17,
+                            "line": 5597,
+                            "offset": 157953
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 5597,
+                            "offset": 157950
+                        }
+                    },
+                    "$SMTH": {
+                        "abstract_content": "cur",
+                        "end": {
+                            "col": 7,
+                            "line": 5597,
+                            "offset": 157943
+                        },
+                        "start": {
+                            "col": 4,
+                            "line": 5597,
+                            "offset": 157940
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 4,
+                "line": 5597,
+                "offset": 157940
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 31,
+                "line": 5893,
+                "offset": 165892
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "de7841aa640e2fc28de51fe28eab51a4aa69621cad5549c5584a91a619328c724f89a500d6ad4bc13bf7719c0861ffc8babe35b3f2ef54f974b2fb2b777ef519_0",
+                "is_ignored": false,
+                "lines": "\t\t\t\t\t\t\telem.innerHTML = value;",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "elem",
+                        "end": {
+                            "col": 12,
+                            "line": 5893,
+                            "offset": 165873
+                        },
+                        "start": {
+                            "col": 8,
+                            "line": 5893,
+                            "offset": 165869
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "value",
+                        "end": {
+                            "col": 30,
+                            "line": 5893,
+                            "offset": 165891
+                        },
+                        "start": {
+                            "col": 25,
+                            "line": 5893,
+                            "offset": 165886
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 8,
+                "line": 5893,
+                "offset": 165869
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 35,
+                "line": 6091,
+                "offset": 170829
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "cf722b43d658143f97dfe151103b601505d4e17be205cf9dc08059c7f13b34e231375bc65f721b7aea28bd87a7a6b4763fa83f52c92505ae63d0661f637db377_0",
+                "is_ignored": false,
+                "lines": "\t\t\tdest.outerHTML = src.outerHTML;",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "dest",
+                        "end": {
+                            "col": 8,
+                            "line": 6091,
+                            "offset": 170802
+                        },
+                        "start": {
+                            "col": 4,
+                            "line": 6091,
+                            "offset": 170798
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "src.outerHTML",
+                        "end": {
+                            "col": 34,
+                            "line": 6091,
+                            "offset": 170828
+                        },
+                        "start": {
+                            "col": 21,
+                            "line": 6091,
+                            "offset": 170815
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 4,
+                "line": 6091,
+                "offset": 170798
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 35,
+                "line": 6099,
+                "offset": 171213
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "da3fefa842a7f11a5c83dfaa7a0bcd57cd289cbf1dcc73af6747936080f3a5a17055b3a8123e5a7f058899c698371e6857fefdb4d135aa0e51a065e517a518da_0",
+                "is_ignored": false,
+                "lines": "\t\t\tdest.innerHTML = src.innerHTML;",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "dest",
+                        "end": {
+                            "col": 8,
+                            "line": 6099,
+                            "offset": 171186
+                        },
+                        "start": {
+                            "col": 4,
+                            "line": 6099,
+                            "offset": 171182
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "src.innerHTML",
+                        "end": {
+                            "col": 34,
+                            "line": 6099,
+                            "offset": 171212
+                        },
+                        "start": {
+                            "col": 21,
+                            "line": 6099,
+                            "offset": 171199
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 4,
+                "line": 6099,
+                "offset": 171182
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 43,
+                "line": 6239,
+                "offset": 175743
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "26da843d239a06d444e3b4b75129cacfdbaa2aede0732744746d9919e4a6ed3406bfcac5b94936b0d49cbf12af858b10afdd6c21033f0d7bf9cfd7d8c7470569_0",
+                "is_ignored": false,
+                "lines": "\t\t\tfragmentDiv.innerHTML = elem.outerHTML;",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "fragmentDiv",
+                        "end": {
+                            "col": 15,
+                            "line": 6239,
+                            "offset": 175715
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "safeFragment.appendChild(document.createElement(\"div\"))",
+                            "svalue_end": {
+                                "col": 73,
+                                "line": 5690,
+                                "offset": 160718
+                            },
+                            "svalue_start": {
+                                "col": 16,
+                                "line": 5690,
+                                "offset": 160661
+                            }
+                        },
+                        "start": {
+                            "col": 4,
+                            "line": 6239,
+                            "offset": 175704
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "elem.outerHTML",
+                        "end": {
+                            "col": 42,
+                            "line": 6239,
+                            "offset": 175742
+                        },
+                        "start": {
+                            "col": 28,
+                            "line": 6239,
+                            "offset": 175728
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 4,
+                "line": 6239,
+                "offset": 175704
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.insecure-document-method.insecure-document-method",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 47,
+                "line": 6325,
+                "offset": 178502
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "949b18db86907ae6fb70f09d37ab32a41d653ffced4f89a948a3e30e9e369b0837db8231b550cdddeccbaca76bb0cb47b8cc2ba656c81da6e1cdd71830edbf31_0",
+                "is_ignored": false,
+                "lines": "\t\t\t\t\tdiv.innerHTML = wrap[1] + elem + wrap[2];",
+                "message": "User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern that can lead to XSS vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9239,
+                            "rule_id": "ReUg41",
+                            "rv_id": 834049,
+                            "url": "https://semgrep.dev/playground/r/A8T37l8/javascript.browser.security.insecure-document-method.insecure-document-method",
+                            "version_id": "A8T37l8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/LwA9",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.insecure-document-method.insecure-document-method",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$EL": {
+                        "abstract_content": "div",
+                        "end": {
+                            "col": 9,
+                            "line": 6325,
+                            "offset": 178464
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "context.createElement(\"div\")",
+                            "svalue_end": {
+                                "col": 40,
+                                "line": 6315,
+                                "offset": 178130
+                            },
+                            "svalue_start": {
+                                "col": 12,
+                                "line": 6315,
+                                "offset": 178102
+                            }
+                        },
+                        "start": {
+                            "col": 6,
+                            "line": 6325,
+                            "offset": 178461
+                        }
+                    },
+                    "$HTML": {
+                        "abstract_content": "wrap[1]+elem+wrap[2]",
+                        "end": {
+                            "col": 46,
+                            "line": 6325,
+                            "offset": 178501
+                        },
+                        "start": {
+                            "col": 22,
+                            "line": 6325,
+                            "offset": 178477
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 6,
+                "line": 6325,
+                "offset": 178461
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.remote-property-injection.remote-property-injection",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 4,
+                "line": 9450,
+                "offset": 266679
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 4,
+                                    "line": 9450,
+                                    "offset": 266679
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 3,
+                                    "line": 9416,
+                                    "offset": 265221
+                                }
+                            },
+                            "jQuery.fn[ funcName ] = function( margin, value ) {\n\t\t\tvar chainable = arguments.length && ( defaultExtra || typeof margin !== \"boolean\" ),\n\t\t\t\textra = defaultExtra || ( margin === true || value === true ? \"margin\" : \"border\" );\n\n\t\t\treturn jQuery.access( this, function( elem, type, value ) {\n\t\t\t\tvar doc;\n\n\t\t\t\tif ( jQuery.isWindow( elem ) ) {\n\t\t\t\t\t// As of 5/8/2012 this will yield incorrect results for Mobile Safari, but there\n\t\t\t\t\t// isn't a whole lot we can do. See pull request at this URL for discussion:\n\t\t\t\t\t// https://github.com/jquery/jquery/pull/764\n\t\t\t\t\treturn elem.document.documentElement[ \"client\" + name ];\n\t\t\t\t}\n\n\t\t\t\t// Get document width or height\n\t\t\t\tif ( elem.nodeType === 9 ) {\n\t\t\t\t\tdoc = elem.documentElement;\n\n\t\t\t\t\t// Either scroll[Width/Height] or offset[Width/Height] or client[Width/Height], whichever is greatest\n\t\t\t\t\t// unfortunately, this causes bug #3838 in IE6/8 only, but there is currently no good, small way to fix it.\n\t\t\t\t\treturn Math.max(\n\t\t\t\t\t\telem.body[ \"scroll\" + name ], doc[ \"scroll\" + name ],\n\t\t\t\t\t\telem.body[ \"offset\" + name ], doc[ \"offset\" + name ],\n\t\t\t\t\t\tdoc[ \"client\" + name ]\n\t\t\t\t\t);\n\t\t\t\t}\n\n\t\t\t\treturn value === undefined ?\n\t\t\t\t\t// Get width or height on the element, requesting but not forcing parseFloat\n\t\t\t\t\tjQuery.css( elem, type, value, extra ) :\n\n\t\t\t\t\t// Set width or height on the element\n\t\t\t\t\tjQuery.style( elem, type, value, extra );\n\t\t\t}, type, chainable ? margin : undefined, chainable, null );\n\t\t}"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 16,
+                                    "line": 9437,
+                                    "offset": 266212
+                                },
+                                "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+                                "start": {
+                                    "col": 7,
+                                    "line": 9437,
+                                    "offset": 266203
+                                }
+                            },
+                            "elem.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "fa2c4318c904f1aef02eaafa6fb1eca7c158dc3c3cd849c336a231b1aa3020d6229c21d9075cb5043767ccbe3667d8bae66850dba75e97a0a57639a2e0f2828c_0",
+                "is_ignored": false,
+                "lines": "\t\tjQuery.fn[ funcName ] = function( margin, value ) {\n\t\t\tvar chainable = arguments.length && ( defaultExtra || typeof margin !== \"boolean\" ),\n\t\t\t\textra = defaultExtra || ( margin === true || value === true ? \"margin\" : \"border\" );\n\n\t\t\treturn jQuery.access( this, function( elem, type, value ) {\n\t\t\t\tvar doc;\n\n\t\t\t\tif ( jQuery.isWindow( elem ) ) {\n\t\t\t\t\t// As of 5/8/2012 this will yield incorrect results for Mobile Safari, but there\n\t\t\t\t\t// isn't a whole lot we can do. See pull request at this URL for discussion:\n\t\t\t\t\t// https://github.com/jquery/jquery/pull/764\n\t\t\t\t\treturn elem.document.documentElement[ \"client\" + name ];\n\t\t\t\t}\n\n\t\t\t\t// Get document width or height\n\t\t\t\tif ( elem.nodeType === 9 ) {\n\t\t\t\t\tdoc = elem.documentElement;\n\n\t\t\t\t\t// Either scroll[Width/Height] or offset[Width/Height] or client[Width/Height], whichever is greatest\n\t\t\t\t\t// unfortunately, this causes bug #3838 in IE6/8 only, but there is currently no good, small way to fix it.\n\t\t\t\t\treturn Math.max(\n\t\t\t\t\t\telem.body[ \"scroll\" + name ], doc[ \"scroll\" + name ],\n\t\t\t\t\t\telem.body[ \"offset\" + name ], doc[ \"offset\" + name ],\n\t\t\t\t\t\tdoc[ \"client\" + name ]\n\t\t\t\t\t);\n\t\t\t\t}\n\n\t\t\t\treturn value === undefined ?\n\t\t\t\t\t// Get width or height on the element, requesting but not forcing parseFloat\n\t\t\t\t\tjQuery.css( elem, type, value, extra ) :\n\n\t\t\t\t\t// Set width or height on the element\n\t\t\t\t\tjQuery.style( elem, type, value, extra );\n\t\t\t}, type, chainable ? margin : undefined, chainable, null );\n\t\t};",
+                "message": "Bracket object notation with user input is present, this might allow an attacker to access all properties of the object and even it's prototype. Use literal values for object properties.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://github.com/nodesecurity/eslint-plugin-security/blob/3c7522ca1be800353513282867a1034c795d9eb4/docs/the-dangers-of-square-bracket-notation.md"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13579,
+                            "rule_id": "JDUL1B",
+                            "rv_id": 834079,
+                            "url": "https://semgrep.dev/playground/r/9lTJ0bl/javascript.express.security.audit.remote-property-injection.remote-property-injection",
+                            "version_id": "9lTJ0bl"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Z4gn",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.remote-property-injection.remote-property-injection",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$INDEX": {
+                        "abstract_content": "jQuery.fn[funcName]=function(margin value){var var chainable arguments.length&&defaultExtra||typeof margin!==\"boolean\"extra defaultExtra||margin===true||value===true\"margin\"\"border\"return jQuery.access(this function(elem type value){var doc if jQuery.isWindow(elem){return elem.document.documentElement[\"client\"+name];}if elem.nodeType===9{doc=elem.documentElement;return Math.max(elem.body[\"scroll\"+name]doc[\"scroll\"+name]elem.body[\"offset\"+name]doc[\"offset\"+name]doc[\"client\"+name]);}return value===undefined jQuery.css(elem type value extra)jQuery.style(elem type value extra);}type chainable margin undefined chainable null);}",
+                        "end": {
+                            "col": 4,
+                            "line": 9450,
+                            "offset": 266679
+                        },
+                        "start": {
+                            "col": 3,
+                            "line": 9416,
+                            "offset": 265221
+                        }
+                    },
+                    "$NEXT": {
+                        "abstract_content": "value",
+                        "end": {
+                            "col": 59,
+                            "line": 9420,
+                            "offset": 265509
+                        },
+                        "start": {
+                            "col": 54,
+                            "line": 9420,
+                            "offset": 265504
+                        }
+                    },
+                    "$OBJ": {
+                        "abstract_content": "jQuery.fn",
+                        "end": {
+                            "col": 12,
+                            "line": 9416,
+                            "offset": 265230
+                        },
+                        "start": {
+                            "col": 3,
+                            "line": 9416,
+                            "offset": 265221
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "elem",
+                        "end": {
+                            "col": 11,
+                            "line": 9437,
+                            "offset": 266207
+                        },
+                        "start": {
+                            "col": 7,
+                            "line": 9437,
+                            "offset": 266203
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "type",
+                        "end": {
+                            "col": 52,
+                            "line": 9420,
+                            "offset": 265502
+                        },
+                        "start": {
+                            "col": 48,
+                            "line": 9420,
+                            "offset": 265498
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/assets/js/jquery-1.8.3.js",
+            "start": {
+                "col": 3,
+                "line": 9416,
+                "offset": 265221
+            }
+        },
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 115,
+                "line": 10,
+                "offset": 529
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e2c985fb489eaae6bbad7f409a330ae5abe436fc7b2868ffed30b7dae6dddf6de61c6235a1ce337967e116989cbbcc7312d331a75477ec38a915541c13099353_0",
+                "is_ignored": false,
+                "lines": "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\">",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css\"",
+                        "end": {
+                            "col": 114,
+                            "line": 10,
+                            "offset": 528
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 10,
+                            "offset": 428
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/index.html",
+            "start": {
+                "col": 9,
+                "line": 10,
+                "offset": 423
+            }
+        },
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 109,
+                "line": 25,
+                "offset": 1335
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "228f973ffad6bb6196ad75dd80cc16fabebd4a53c472a242a11240bdd83404c62c97b9981e340069ad49e50de0327c01c628b0e00e738590cedf1a6cdcd318d2_0",
+                "is_ignored": false,
+                "lines": "        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\">",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css\"",
+                        "end": {
+                            "col": 108,
+                            "line": 25,
+                            "offset": 1334
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 25,
+                            "offset": 1240
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/index.html",
+            "start": {
+                "col": 9,
+                "line": 25,
+                "offset": 1235
+            }
+        },
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 168,
+                "line": 44,
+                "offset": 1958
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "dca6fc9e1c412498a81bc97691e1b450af9231a2deb9c2463dbb4482227cdd280dc91590ed6697c052a4f1e87064d2b177135f2e6daa1fed65d46cd6072b736b_0",
+                "is_ignored": false,
+                "lines": "        <script type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjYd2WY8LTvjWNSppdogu8B6y5XDdgVI&libraries=places\" async defer></script>",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " type=\"text/javascript\" src=\"https://maps.googleapis.com/maps/api/js?key=AIzaSyBKjYd2WY8LTvjWNSppdogu8B6y5XDdgVI&libraries=places\" async defer",
+                        "end": {
+                            "col": 158,
+                            "line": 44,
+                            "offset": 1948
+                        },
+                        "start": {
+                            "col": 16,
+                            "line": 44,
+                            "offset": 1806
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/public/index.html",
+            "start": {
+                "col": 9,
+                "line": 44,
+                "offset": 1799
+            }
+        },
+        {
+            "check_id": "problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 18,
+                "line": 22,
+                "offset": 350
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e447f2866b075cb01360b5180dac7bfe3be185247f996c34e4db9a1b0f3fb25510d31549da41cdc5877f0029a2f1ba61d6609a3c6c4de6b986cb690c99a3d3cc_0",
+                "is_ignored": false,
+                "lines": "var server = http.createServer(app);",
+                "message": "Checks for any usage of http servers instead of https servers. Encourages the usage of https protocol instead of http, which does not have TLS and is therefore unencrypted. Using http can lead to man-in-the-middle attacks in which the attacker is able to read sensitive information.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A02:2021 - Cryptographic Failures",
+                        "A03:2017 - Sensitive Data Exposure"
+                    ],
+                    "references": [
+                        "https://nodejs.org/api/http.html#http_class_http_agent",
+                        "https://groups.google.com/g/rubyonrails-security/c/NCCsca7TEtY"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9430,
+                            "rule_id": "7KUQAE",
+                            "rv_id": 834340,
+                            "url": "https://semgrep.dev/playground/r/7ZTx97o/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                            "version_id": "7ZTx97o"
+                        }
+                    },
+                    "shortlink": "https://sg.run/x1zL",
+                    "source": "https://semgrep.dev/r/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "node.js"
+                    ],
+                    "vulnerability": "Insecure Transport",
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "createServer",
+                        "end": {
+                            "col": 31,
+                            "line": 22,
+                            "offset": 363
+                        },
+                        "start": {
+                            "col": 19,
+                            "line": 22,
+                            "offset": 351
+                        }
+                    },
+                    "$HTTP": {
+                        "abstract_content": "http",
+                        "end": {
+                            "col": 18,
+                            "line": 22,
+                            "offset": 350
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "require('http')",
+                            "svalue_end": {
+                                "col": 27,
+                                "line": 9,
+                                "offset": 160
+                            },
+                            "svalue_start": {
+                                "col": 12,
+                                "line": 9,
+                                "offset": 145
+                            }
+                        },
+                        "start": {
+                            "col": 14,
+                            "line": 22,
+                            "offset": 346
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/server/bin/www",
+            "start": {
+                "col": 14,
+                "line": 22,
+                "offset": 346
+            }
+        },
+        {
+            "check_id": "javascript.phantom.security.audit.phantom-injection.phantom-injection",
+            "TP": 1,
+            "FP": 0,
+            "end": {
+                "col": 27,
+                "line": 82,
+                "offset": 2212
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "ff825aae3a14ba530eafb0f5c6bbe20752129d8bbdb2b481dd3ad50098999027666317b112c4db29d534ad8cfe5cbe9891db950d964995feae5c532b83935d2a_0",
+                "is_ignored": false,
+                "lines": "            page.open(url).then(function(status) {",
+                "message": "If unverified user data can reach the `phantom` page methods it can result in Server-Side Request Forgery vulnerabilities",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-918: Server-Side Request Forgery (SSRF)"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A10:2021 - Server-Side Request Forgery (SSRF)"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9334,
+                            "rule_id": "3qUPXE",
+                            "rv_id": 834170,
+                            "url": "https://semgrep.dev/playground/r/l4TyOj1/javascript.phantom.security.audit.phantom-injection.phantom-injection",
+                            "version_id": "l4TyOj1"
+                        }
+                    },
+                    "shortlink": "https://sg.run/dKv0",
+                    "source": "https://semgrep.dev/r/javascript.phantom.security.audit.phantom-injection.phantom-injection",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "phantom"
+                    ],
+                    "vulnerability_class": [
+                        "Server-Side Request Forgery (SSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$INPUT": {
+                        "abstract_content": "url",
+                        "end": {
+                            "col": 26,
+                            "line": 82,
+                            "offset": 2211
+                        },
+                        "start": {
+                            "col": 23,
+                            "line": 82,
+                            "offset": 2208
+                        }
+                    },
+                    "$PAGE": {
+                        "abstract_content": "page",
+                        "end": {
+                            "col": 17,
+                            "line": 82,
+                            "offset": 2202
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 82,
+                            "offset": 2198
+                        }
+                    },
+                    "$PHANTOM": {
+                        "abstract_content": "phantom",
+                        "end": {
+                            "col": 12,
+                            "line": 8,
+                            "offset": 264
+                        },
+                        "start": {
+                            "col": 5,
+                            "line": 8,
+                            "offset": 257
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "InvestApp/server/routes/login.ts",
+            "start": {
+                "col": 13,
+                "line": 82,
+                "offset": 2198
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.90.0"
+}

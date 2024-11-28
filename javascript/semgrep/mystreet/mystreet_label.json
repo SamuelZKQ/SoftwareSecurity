@@ -1,0 +1,168 @@
+{
+    "results": [
+        {
+            "check_id": "javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 109,
+                "line": 2,
+                "offset": 130
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "4e6fe8534b927197768b3f5e42c8854f27895e2327f1a3b7ad983e598f984b07f7ad46b7df8370aa306065c88caccb8e2d012d7f79ed2f6ae42a082ea2df622c_0",
+                "is_ignored": false,
+                "lines": "  {{t 'general.source'}}: <a href=\"{{dataLink}}\" target=\"_blank\" class=\"data-citation\">{{dataName}}</a> <br>",
+                "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href='/{{link}}'. You may also consider setting the Content Security Policy (CSP) header.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss#:~:text=javascript:%20URI",
+                        "https://github.com/pugjs/pug/issues/2952"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9284,
+                            "rule_id": "AbUzlj",
+                            "rv_id": 834088,
+                            "url": "https://semgrep.dev/playground/r/e1TDkjP/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+                            "version_id": "e1TDkjP"
+                        }
+                    },
+                    "shortlink": "https://sg.run/8yOq",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "\"",
+                        "end": {
+                            "col": 36,
+                            "line": 2,
+                            "offset": 57
+                        },
+                        "start": {
+                            "col": 35,
+                            "line": 2,
+                            "offset": 56
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "MyStreet/app/components/data-citation/template.hbs",
+            "start": {
+                "col": 27,
+                "line": 2,
+                "offset": 48
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 28,
+                "line": 6,
+                "offset": 158
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "bb453a72589acd2df726fe219f120bd9d583bcc16964fd98108bca6e6731b5a530f276ad5f42f7992f4ab813151c5413e29369169a4d3999cd655e1ccb476a9b_0",
+                "is_ignored": false,
+                "lines": "    {{{model.description}}}",
+                "message": "Detected an explicit unescape in a Mustache template, using triple braces '{{{...}}}' or ampersand '&'. If external data can reach these locations, your application is exposed to a cross-site scripting (XSS) vulnerability. If you must do this, ensure no external data can reach this location.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://github.com/janl/mustache.js/#variables",
+                        "https://ractive.js.org/v0.x/0.7/mustaches#variables"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9283,
+                            "rule_id": "ReUgG1",
+                            "rv_id": 834087,
+                            "url": "https://semgrep.dev/playground/r/O9TJWxA/javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape",
+                            "version_id": "O9TJWxA"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Lwx9",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.mustache.explicit-unescape.template-explicit-unescape",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "n",
+                        "end": {
+                            "col": 25,
+                            "line": 6,
+                            "offset": 155
+                        },
+                        "start": {
+                            "col": 24,
+                            "line": 6,
+                            "offset": 154
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "MyStreet/app/components/topic-feature/template.hbs",
+            "start": {
+                "col": 5,
+                "line": 6,
+                "offset": 135
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.90.0"
+}

@@ -1,0 +1,381 @@
+{
+    "errors": [],
+    "interfile_languages_used": [],
+    "paths": {
+        "scanned": [
+            "pc-admin/.babelrc",
+            "pc-admin/.eslintrc.js",
+            "pc-admin/.gitignore",
+            "pc-admin/README.md",
+            "pc-admin/app/assets/images/404.png",
+            "pc-admin/app/components/AuthRouter/index.js",
+            "pc-admin/app/components/DocumentLayout/connect.js",
+            "pc-admin/app/components/DocumentLayout/index.js",
+            "pc-admin/app/components/DocumentLayout/style.scss",
+            "pc-admin/app/components/PictureWall/index.js",
+            "pc-admin/app/components/TableHOC/index.js",
+            "pc-admin/app/components/index.js",
+            "pc-admin/app/components/layout/Breadcrumb/index.js",
+            "pc-admin/app/components/layout/Button/index.js",
+            "pc-admin/app/components/layout/Image/index.js",
+            "pc-admin/app/components/layout/Loading/index.js",
+            "pc-admin/app/components/layout/Loading/style.scss",
+            "pc-admin/app/components/layout/Menu/index.js",
+            "pc-admin/app/components/layout/Upload/index.js",
+            "pc-admin/app/components/modal/ProductModal/connect.js",
+            "pc-admin/app/components/modal/ProductModal/index.js",
+            "pc-admin/app/components/modal/ProductModal/line.js",
+            "pc-admin/app/components/modal/ProductModal/style.scss",
+            "pc-admin/app/index.html",
+            "pc-admin/app/index.js",
+            "pc-admin/app/models/category.js",
+            "pc-admin/app/models/index.js",
+            "pc-admin/app/models/product.js",
+            "pc-admin/app/models/user.js",
+            "pc-admin/app/pages/App.js",
+            "pc-admin/app/pages/NotFound.js",
+            "pc-admin/app/pages/category/component/form/index.js",
+            "pc-admin/app/pages/category/connect.js",
+            "pc-admin/app/pages/category/index.js",
+            "pc-admin/app/pages/connect.js",
+            "pc-admin/app/pages/home/connect.js",
+            "pc-admin/app/pages/home/index.js",
+            "pc-admin/app/pages/home/style.scss",
+            "pc-admin/app/pages/index.js",
+            "pc-admin/app/pages/login/connect.js",
+            "pc-admin/app/pages/login/form/index.js",
+            "pc-admin/app/pages/login/form/style.scss",
+            "pc-admin/app/pages/login/index.js",
+            "pc-admin/app/pages/login/style.scss",
+            "pc-admin/app/pages/product/add/connect.js",
+            "pc-admin/app/pages/product/add/index.js",
+            "pc-admin/app/pages/product/component/form/connect.js",
+            "pc-admin/app/pages/product/component/form/index.js",
+            "pc-admin/app/pages/product/component/form/style.scss",
+            "pc-admin/app/pages/product/component/search/connect.js",
+            "pc-admin/app/pages/product/component/search/index.js",
+            "pc-admin/app/pages/product/component/search/style.scss",
+            "pc-admin/app/pages/product/component/table/connect.js",
+            "pc-admin/app/pages/product/component/table/index.js",
+            "pc-admin/app/pages/product/component/table/style.scss",
+            "pc-admin/app/pages/product/edit/connect.js",
+            "pc-admin/app/pages/product/edit/index.js",
+            "pc-admin/app/pages/product/index.js",
+            "pc-admin/app/pages/product/list/connect.js",
+            "pc-admin/app/pages/product/list/index.js",
+            "pc-admin/app/pages/product/manage/connect.js",
+            "pc-admin/app/pages/product/manage/index.js",
+            "pc-admin/app/pages/product/review/connect.js",
+            "pc-admin/app/pages/product/review/index.js",
+            "pc-admin/app/pages/product/review/style.scss",
+            "pc-admin/app/pages/setting/collect/connect.js",
+            "pc-admin/app/pages/setting/collect/index.js",
+            "pc-admin/app/pages/setting/contact/connect.js",
+            "pc-admin/app/pages/setting/contact/contactRow.js",
+            "pc-admin/app/pages/setting/contact/index.js",
+            "pc-admin/app/pages/setting/person/connect.js",
+            "pc-admin/app/pages/setting/person/index.js",
+            "pc-admin/app/pages/style.scss",
+            "pc-admin/app/pages/user/back/UserModal/index.js",
+            "pc-admin/app/pages/user/back/connect.js",
+            "pc-admin/app/pages/user/back/index.js",
+            "pc-admin/app/pages/user/component/table/connect.js",
+            "pc-admin/app/pages/user/component/table/index.js",
+            "pc-admin/app/pages/user/component/table/style.scss",
+            "pc-admin/app/pages/user/front/connect.js",
+            "pc-admin/app/pages/user/front/index.js",
+            "pc-admin/app/router.js",
+            "pc-admin/app/services/category.js",
+            "pc-admin/app/services/product.js",
+            "pc-admin/app/services/user.js",
+            "pc-admin/app/styles/mixins/index.scss",
+            "pc-admin/app/utils/config.js",
+            "pc-admin/app/utils/enum.js",
+            "pc-admin/app/utils/format.js",
+            "pc-admin/app/utils/history.js",
+            "pc-admin/app/utils/index.js",
+            "pc-admin/app/utils/lib/Base64.js",
+            "pc-admin/app/utils/lib/index.js",
+            "pc-admin/app/utils/request.js",
+            "pc-admin/app/utils/router.js",
+            "pc-admin/app/utils/upload.js",
+            "pc-admin/app/utils/uploadOSS.js",
+            "pc-admin/jsconfig.json",
+            "pc-admin/nodemon.json",
+            "pc-admin/package-lock.json",
+            "pc-admin/package.json",
+            "pc-admin/postcss.config.js",
+            "pc-admin/server/app.js",
+            "pc-admin/server/middleware/error.js",
+            "pc-admin/server/middleware/token.js",
+            "pc-admin/server/models/category.js",
+            "pc-admin/server/models/collect.js",
+            "pc-admin/server/models/product.js",
+            "pc-admin/server/models/user.js",
+            "pc-admin/server/router.js",
+            "pc-admin/server/routes/category.js",
+            "pc-admin/server/routes/collect.js",
+            "pc-admin/server/routes/common.js",
+            "pc-admin/server/routes/product.js",
+            "pc-admin/server/routes/user.js",
+            "pc-admin/server/utils/HashPassword.js",
+            "pc-admin/server/utils/backMap.js",
+            "pc-admin/server/utils/config.js",
+            "pc-admin/server/utils/error.js",
+            "pc-admin/server/utils/logger.js",
+            "pc-admin/server/utils/pem/private_key.pem",
+            "pc-admin/server/utils/pem/public_key.pem",
+            "pc-admin/server/utils/token.js",
+            "pc-admin/server/utils/upload.js",
+            "pc-admin/server.js",
+            "pc-admin/typings.json",
+            "pc-admin/utils/config.js",
+            "pc-admin/webpack.config.js",
+            "pc-admin/webpack.dev.config.js",
+            "pc-admin/yarn.lock"
+        ]
+    },
+    "results": [
+        {
+            "check_id": "javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+            "end": {
+                "col": 50,
+                "line": 62,
+                "offset": 1744
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "condition",
+                            "location": {
+                                "end": {
+                                    "col": 28,
+                                    "line": 59,
+                                    "offset": 1604
+                                },
+                                "path": "pc-admin/server/models/product.js",
+                                "start": {
+                                    "col": 19,
+                                    "line": 59,
+                                    "offset": 1595
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 50,
+                                    "line": 62,
+                                    "offset": 1744
+                                },
+                                "path": "pc-admin/server/models/product.js",
+                                "start": {
+                                    "col": 24,
+                                    "line": 62,
+                                    "offset": 1718
+                                }
+                            },
+                            "new RegExp(condition.name)"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 28,
+                                    "line": 59,
+                                    "offset": 1604
+                                },
+                                "path": "pc-admin/server/models/product.js",
+                                "start": {
+                                    "col": 19,
+                                    "line": 59,
+                                    "offset": 1595
+                                }
+                            },
+                            "condition"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "e778a5d71f37cf9e791ca6ea9e4913a3d47a43c6857e88ab499d50b0b52061f34d3a0ea936ded9afd34aeecde6a8242f35b3d7dba612a873433573ad49f36c34_0",
+                "is_ignored": false,
+                "lines": "      condition.name = new RegExp(condition.name)",
+                "message": "RegExp() called with a `condition` function argument, this might allow an attacker to cause a Regular Expression Denial-of-Service (ReDoS) within your application as RegExP blocks the main thread. For this reason, it is recommended to use hardcoded regexes instead. If your regex is run on user-controlled input, consider performing input validation or use a regex checking/sanitization library such as https://www.npmjs.com/package/recheck to verify that the regex does not appear vulnerable to ReDoS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 12685,
+                            "rule_id": "zdU1gD",
+                            "rv_id": 834140,
+                            "url": "https://semgrep.dev/playground/r/8KTGkZw/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                            "version_id": "8KTGkZw"
+                        }
+                    },
+                    "shortlink": "https://sg.run/gr65",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.detect-non-literal-regexp.detect-non-literal-regexp",
+                    "source-rule-url": "https://github.com/nodesecurity/eslint-plugin-security/blob/master/rules/detect-non-literal-regexp.js",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "javascript"
+                    ],
+                    "vulnerability_class": [
+                        "Denial-of-Service (DoS)"
+                    ]
+                },
+                "metavars": {
+                    "$ARG": {
+                        "abstract_content": "condition",
+                        "end": {
+                            "col": 28,
+                            "line": 59,
+                            "offset": 1604
+                        },
+                        "start": {
+                            "col": 19,
+                            "line": 59,
+                            "offset": 1595
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "pc-admin/server/models/product.js",
+            "start": {
+                "col": 24,
+                "line": 62,
+                "offset": 1718
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+            "end": {
+                "col": 22,
+                "line": 2,
+                "offset": 53
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "5f13b80ea8636d714c7ad8b674c8fe1f0d2c922ca39905a624e98238dd226174838a5ca4c5551a81907da78053d52e65697ad6607ea404e63389826198dd0225_0",
+                "is_ignored": false,
+                "lines": "-----BEGIN RSA PRIVATE KEY-----\nMIIEpAIBAAKCAQEAzVNL7+l38fW1grm2i5mAEzTG3kc8AeXRU1Emn8nMIcny5/Aa",
+                "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9070,
+                            "rule_id": "7KUQ0p",
+                            "rv_id": 833786,
+                            "url": "https://semgrep.dev/playground/r/vdTOzge/generic.secrets.security.detected-private-key.detected-private-key",
+                            "version_id": "vdTOzge"
+                        }
+                    },
+                    "shortlink": "https://sg.run/b7dr",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+                    "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 4,
+                            "line": 1,
+                            "offset": 3
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$KEY": {
+                        "abstract_content": "MIIEpAIBAAKCAQEAzVNL7",
+                        "end": {
+                            "col": 22,
+                            "line": 2,
+                            "offset": 53
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 2,
+                            "offset": 32
+                        }
+                    },
+                    "$TYPE": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 15,
+                            "line": 1,
+                            "offset": 14
+                        },
+                        "start": {
+                            "col": 12,
+                            "line": 1,
+                            "offset": 11
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "pc-admin/server/utils/pem/private_key.pem",
+            "start": {
+                "col": 1,
+                "line": 1,
+                "offset": 0
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.90.0"
+}

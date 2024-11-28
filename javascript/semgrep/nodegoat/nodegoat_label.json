@@ -1,0 +1,3397 @@
+{
+    "results": [
+        {
+            "check_id": "javascript.browser.security.eval-detected.eval-detected",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 45,
+                "line": 32,
+                "offset": 955
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "434b05def0574e45d82efd8f7481b0e2a2d75ba1bccaa4ef2ce10de325764e51c2989520fee6bf6f193539a73fa6c793349bb3f883e3047a3939513c232a9989_0",
+                "is_ignored": false,
+                "lines": "        const preTax = eval(req.body.preTax);",
+                "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "5.2.4 Dynamic Code Execution Features",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+                        "section": "V5 Validation, Sanitization and Encoding",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9238,
+                            "rule_id": "GdU7dw",
+                            "rv_id": 834048,
+                            "url": "https://semgrep.dev/playground/r/RGTKGx8/javascript.browser.security.eval-detected.eval-detected",
+                            "version_id": "RGTKGx8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/7ope",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 24,
+                "line": 32,
+                "offset": 934
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 45,
+                "line": 32,
+                "offset": 955
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 45,
+                                    "line": 32,
+                                    "offset": 955
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 24,
+                                    "line": 32,
+                                    "offset": 934
+                                }
+                            },
+                            "eval(req.body.preTax)"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 37,
+                                    "line": 32,
+                                    "offset": 947
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 29,
+                                    "line": 32,
+                                    "offset": 939
+                                }
+                            },
+                            "req.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "10f30dbd98be8431dfb4cc77e861444c1dcd79c0255cb8f95f1f84f1edee2a33dac5085b750134d700af6fceb1a2d9d31e34d6776f1ff27b833d8c2b71e70063_0",
+                "is_ignored": false,
+                "lines": "        const preTax = eval(req.body.preTax);",
+                "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "interfile": true,
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+                        "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+                        "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+                        "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13023,
+                            "rule_id": "DbUKEz",
+                            "rv_id": 834137,
+                            "url": "https://semgrep.dev/playground/r/ExTrDwO/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                            "version_id": "ExTrDwO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/96Yk",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "node.js",
+                        "Express",
+                        "Next.js"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {
+                    "$NEXT": {
+                        "abstract_content": "next",
+                        "end": {
+                            "col": 53,
+                            "line": 28,
+                            "offset": 822
+                        },
+                        "start": {
+                            "col": 49,
+                            "line": 28,
+                            "offset": 818
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 32,
+                            "line": 32,
+                            "offset": 942
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 32,
+                            "offset": 939
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": {
+                            "col": 47,
+                            "line": 28,
+                            "offset": 816
+                        },
+                        "start": {
+                            "col": 44,
+                            "line": 28,
+                            "offset": 813
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 24,
+                "line": 32,
+                "offset": 934
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.eval-detected.eval-detected",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 49,
+                "line": 33,
+                "offset": 1005
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "434b05def0574e45d82efd8f7481b0e2a2d75ba1bccaa4ef2ce10de325764e51c2989520fee6bf6f193539a73fa6c793349bb3f883e3047a3939513c232a9989_1",
+                "is_ignored": false,
+                "lines": "        const afterTax = eval(req.body.afterTax);",
+                "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "5.2.4 Dynamic Code Execution Features",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+                        "section": "V5 Validation, Sanitization and Encoding",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9238,
+                            "rule_id": "GdU7dw",
+                            "rv_id": 834048,
+                            "url": "https://semgrep.dev/playground/r/RGTKGx8/javascript.browser.security.eval-detected.eval-detected",
+                            "version_id": "RGTKGx8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/7ope",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 26,
+                "line": 33,
+                "offset": 982
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 49,
+                "line": 33,
+                "offset": 1005
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 49,
+                                    "line": 33,
+                                    "offset": 1005
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 26,
+                                    "line": 33,
+                                    "offset": 982
+                                }
+                            },
+                            "eval(req.body.afterTax)"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 39,
+                                    "line": 33,
+                                    "offset": 995
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 31,
+                                    "line": 33,
+                                    "offset": 987
+                                }
+                            },
+                            "req.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "10f30dbd98be8431dfb4cc77e861444c1dcd79c0255cb8f95f1f84f1edee2a33dac5085b750134d700af6fceb1a2d9d31e34d6776f1ff27b833d8c2b71e70063_1",
+                "is_ignored": false,
+                "lines": "        const afterTax = eval(req.body.afterTax);",
+                "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "interfile": true,
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+                        "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+                        "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+                        "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13023,
+                            "rule_id": "DbUKEz",
+                            "rv_id": 834137,
+                            "url": "https://semgrep.dev/playground/r/ExTrDwO/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                            "version_id": "ExTrDwO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/96Yk",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "node.js",
+                        "Express",
+                        "Next.js"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {
+                    "$NEXT": {
+                        "abstract_content": "next",
+                        "end": {
+                            "col": 53,
+                            "line": 28,
+                            "offset": 822
+                        },
+                        "start": {
+                            "col": 49,
+                            "line": 28,
+                            "offset": 818
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 34,
+                            "line": 33,
+                            "offset": 990
+                        },
+                        "start": {
+                            "col": 31,
+                            "line": 33,
+                            "offset": 987
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": {
+                            "col": 47,
+                            "line": 28,
+                            "offset": 816
+                        },
+                        "start": {
+                            "col": 44,
+                            "line": 28,
+                            "offset": 813
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 26,
+                "line": 33,
+                "offset": 982
+            }
+        },
+        {
+            "check_id": "javascript.browser.security.eval-detected.eval-detected",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 41,
+                "line": 34,
+                "offset": 1047
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "434b05def0574e45d82efd8f7481b0e2a2d75ba1bccaa4ef2ce10de325764e51c2989520fee6bf6f193539a73fa6c793349bb3f883e3047a3939513c232a9989_2",
+                "is_ignored": false,
+                "lines": "        const roth = eval(req.body.roth);",
+                "message": "Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this content can be input from outside the program, this may be a code injection vulnerability. Ensure evaluated content is not definable by external sources.",
+                "metadata": {
+                    "asvs": {
+                        "control_id": "5.2.4 Dynamic Code Execution Features",
+                        "control_url": "https://github.com/OWASP/ASVS/blob/master/4.0/en/0x13-V5-Validation-Sanitization-Encoding.md#v52-sanitization-and-sandboxing",
+                        "section": "V5 Validation, Sanitization and Encoding",
+                        "version": "4"
+                    },
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A03_2021-Injection"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9238,
+                            "rule_id": "GdU7dw",
+                            "rv_id": 834048,
+                            "url": "https://semgrep.dev/playground/r/RGTKGx8/javascript.browser.security.eval-detected.eval-detected",
+                            "version_id": "RGTKGx8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/7ope",
+                    "source": "https://semgrep.dev/r/javascript.browser.security.eval-detected.eval-detected",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "browser"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 22,
+                "line": 34,
+                "offset": 1028
+            }
+        },
+        {
+            "check_id": "javascript.lang.security.audit.code-string-concat.code-string-concat",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 41,
+                "line": 34,
+                "offset": 1047
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 41,
+                                    "line": 34,
+                                    "offset": 1047
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 22,
+                                    "line": 34,
+                                    "offset": 1028
+                                }
+                            },
+                            "eval(req.body.roth)"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 35,
+                                    "line": 34,
+                                    "offset": 1041
+                                },
+                                "path": "NodeGoat/app/routes/contributions.js",
+                                "start": {
+                                    "col": 27,
+                                    "line": 34,
+                                    "offset": 1033
+                                }
+                            },
+                            "req.body"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "10f30dbd98be8431dfb4cc77e861444c1dcd79c0255cb8f95f1f84f1edee2a33dac5085b750134d700af6fceb1a2d9d31e34d6776f1ff27b833d8c2b71e70063_2",
+                "is_ignored": false,
+                "lines": "        const roth = eval(req.body.roth);",
+                "message": "Found data from an Express or Next web request flowing to `eval`. If this data is user-controllable this can lead to execution of arbitrary system commands in the context of your application process. Avoid `eval` whenever possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-95: Improper Neutralization of Directives in Dynamically Evaluated Code ('Eval Injection')"
+                    ],
+                    "impact": "MEDIUM",
+                    "interfile": true,
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval",
+                        "https://nodejs.org/api/child_process.html#child_processexeccommand-options-callback",
+                        "https://www.stackhawk.com/blog/nodejs-command-injection-examples-and-prevention/",
+                        "https://ckarande.gitbooks.io/owasp-nodegoat-tutorial/content/tutorial/a1_-_server_side_js_injection.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13023,
+                            "rule_id": "DbUKEz",
+                            "rv_id": 834137,
+                            "url": "https://semgrep.dev/playground/r/ExTrDwO/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                            "version_id": "ExTrDwO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/96Yk",
+                    "source": "https://semgrep.dev/r/javascript.lang.security.audit.code-string-concat.code-string-concat",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "node.js",
+                        "Express",
+                        "Next.js"
+                    ],
+                    "vulnerability_class": [
+                        "Code Injection"
+                    ]
+                },
+                "metavars": {
+                    "$NEXT": {
+                        "abstract_content": "next",
+                        "end": {
+                            "col": 53,
+                            "line": 28,
+                            "offset": 822
+                        },
+                        "start": {
+                            "col": 49,
+                            "line": 28,
+                            "offset": 818
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 30,
+                            "line": 34,
+                            "offset": 1036
+                        },
+                        "start": {
+                            "col": 27,
+                            "line": 34,
+                            "offset": 1033
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": {
+                            "col": 47,
+                            "line": 28,
+                            "offset": 816
+                        },
+                        "start": {
+                            "col": 44,
+                            "line": 28,
+                            "offset": 813
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/contributions.js",
+            "start": {
+                "col": 22,
+                "line": 34,
+                "offset": 1028
+            }
+        },
+        {
+            "check_id": "javascript.express.open-redirect-deepsemgrep.open-redirect-deepsemgrep",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 42,
+                "line": 72,
+                "offset": 2884
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 42,
+                                    "line": 72,
+                                    "offset": 2884
+                                },
+                                "path": "NodeGoat/app/routes/index.js",
+                                "start": {
+                                    "col": 29,
+                                    "line": 72,
+                                    "offset": 2871
+                                }
+                            },
+                            "req.query.url"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 38,
+                                    "line": 72,
+                                    "offset": 2880
+                                },
+                                "path": "NodeGoat/app/routes/index.js",
+                                "start": {
+                                    "col": 29,
+                                    "line": 72,
+                                    "offset": 2871
+                                }
+                            },
+                            "req.query"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "64e85ff21650d9e7e1b8e80bc23d829e16aff0fc8e0f0883068dfc3a53272926855309ca1262650555369cab3636a78a86086deb3afbeb8740c13a7bd98aef45_0",
+                "is_ignored": false,
+                "lines": "        return res.redirect(req.query.url);",
+                "message": "The application builds a URL using user-controlled input which can lead to an open redirect vulnerability. An attacker can manipulate the URL and redirect users to an arbitrary domain. Open redirect vulnerabilities can lead to issues such as Cross-site scripting (XSS) or redirecting to a malicious domain for activities such as phishing to capture users' credentials. To prevent this vulnerability perform strict input validation of the domain against an allowlist of approved domains. Notify a user in your application that they are leaving the website. Display a domain where they are redirected to the user. A user can then either accept or deny the redirect to an untrusted site.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+                    ],
+                    "functional-categories": [
+                        "web::source::cookie::express",
+                        "web::source::http-params::express",
+                        "web::source::http-body::express",
+                        "web::source::header::express",
+                        "web::sink::redirect::express"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Copyright 2023 Semgrep, Inc.",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A01:2021 - Broken Access Control"
+                    ],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "pro_rules",
+                            "r_id": 43795,
+                            "rule_id": "2ZUXkp",
+                            "rv_id": 850625,
+                            "url": "https://semgrep.dev/playground/r/RGTK1En/javascript.express.open-redirect-deepsemgrep.open-redirect-deepsemgrep",
+                            "version_id": "RGTK1En"
+                        }
+                    },
+                    "shortlink": "https://sg.run/BDbW",
+                    "source": "https://semgrep.dev/r/javascript.express.open-redirect-deepsemgrep.open-redirect-deepsemgrep",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Open Redirect"
+                    ]
+                },
+                "metavars": {
+                    "$QUERY": {
+                        "abstract_content": "req.query.url",
+                        "end": {
+                            "col": 42,
+                            "line": 72,
+                            "offset": 2884
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 72,
+                            "offset": 2871
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 32,
+                            "line": 72,
+                            "offset": 2874
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 72,
+                            "offset": 2871
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": {
+                            "col": 19,
+                            "line": 72,
+                            "offset": 2861
+                        },
+                        "start": {
+                            "col": 16,
+                            "line": 72,
+                            "offset": 2858
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/index.js",
+            "start": {
+                "col": 29,
+                "line": 72,
+                "offset": 2871
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-open-redirect.express-open-redirect",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 42,
+                "line": 72,
+                "offset": 2884
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 42,
+                                    "line": 72,
+                                    "offset": 2884
+                                },
+                                "path": "NodeGoat/app/routes/index.js",
+                                "start": {
+                                    "col": 29,
+                                    "line": 72,
+                                    "offset": 2871
+                                }
+                            },
+                            "req.query.url"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 38,
+                                    "line": 72,
+                                    "offset": 2880
+                                },
+                                "path": "NodeGoat/app/routes/index.js",
+                                "start": {
+                                    "col": 29,
+                                    "line": 72,
+                                    "offset": 2871
+                                }
+                            },
+                            "req.query"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "a21f3508e4c587ea875d4ac18fb4ee6b77e877b84e2d755cfd61515c2166a0a240a8581a56008656a818408d58021d56888914ba483aeae217236a62de95ad50_0",
+                "is_ignored": false,
+                "lines": "        return res.redirect(req.query.url);",
+                "message": "The application redirects to a URL specified by user-supplied input `req` that is not validated. This could redirect users to malicious locations. Consider using an allow-list approach to validate URLs, or warn users they are being redirected to a third-party website.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-601: URL Redirection to Untrusted Site ('Open Redirect')"
+                    ],
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A01:2021 - Broken Access Control"
+                    ],
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Unvalidated_Redirects_and_Forwards_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 22081,
+                            "rule_id": "X5ULkq",
+                            "rv_id": 834071,
+                            "url": "https://semgrep.dev/playground/r/6xTDg91/javascript.express.security.audit.express-open-redirect.express-open-redirect",
+                            "version_id": "6xTDg91"
+                        }
+                    },
+                    "shortlink": "https://sg.run/EpoP",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-open-redirect.express-open-redirect",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Open Redirect"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "get",
+                        "end": {
+                            "col": 4,
+                            "line": 1,
+                            "offset": 3
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": {
+                            "col": 8,
+                            "line": 70,
+                            "offset": 2715
+                        },
+                        "start": {
+                            "col": 5,
+                            "line": 70,
+                            "offset": 2712
+                        }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": {
+                            "col": 12,
+                            "line": 70,
+                            "offset": 2719
+                        },
+                        "start": {
+                            "col": 9,
+                            "line": 70,
+                            "offset": 2716
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 32,
+                            "line": 72,
+                            "offset": 2874
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 72,
+                            "offset": 2871
+                        }
+                    },
+                    "$RES": {
+                        "abstract_content": "res",
+                        "end": {
+                            "col": 19,
+                            "line": 72,
+                            "offset": 2861
+                        },
+                        "start": {
+                            "col": 16,
+                            "line": 72,
+                            "offset": 2858
+                        }
+                    },
+                    "$VALUE": {
+                        "abstract_content": "url",
+                        "end": {
+                            "col": 42,
+                            "line": 72,
+                            "offset": 2884
+                        },
+                        "start": {
+                            "col": 39,
+                            "line": 72,
+                            "offset": 2881
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/index.js",
+            "start": {
+                "col": 29,
+                "line": 72,
+                "offset": 2871
+            }
+        },
+        {
+            "check_id": "javascript.express.redos.express-redos.redos",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 74,
+                "line": 61,
+                "offset": 2278
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "regexPattern",
+                            "location": {
+                                "end": {
+                                    "col": 27,
+                                    "line": 59,
+                                    "offset": 2103
+                                },
+                                "path": "NodeGoat/app/routes/profile.js",
+                                "start": {
+                                    "col": 15,
+                                    "line": 59,
+                                    "offset": 2091
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 74,
+                                    "line": 61,
+                                    "offset": 2278
+                                },
+                                "path": "NodeGoat/app/routes/profile.js",
+                                "start": {
+                                    "col": 44,
+                                    "line": 61,
+                                    "offset": 2248
+                                }
+                            },
+                            "regexPattern.test(bankRouting)"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 43,
+                                    "line": 59,
+                                    "offset": 2119
+                                },
+                                "path": "NodeGoat/app/routes/profile.js",
+                                "start": {
+                                    "col": 30,
+                                    "line": 59,
+                                    "offset": 2106
+                                }
+                            },
+                            "/([0-9]+)+\\#/"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "8c4e5d2d3498a8c77590babdb60d3863835799a75ed2355c17ea04d5cf86a4625884a8de01557c8ea466692badeff9a5bfcdfeb711a63c66a1261c27eb4e4b80_0",
+                "is_ignored": false,
+                "lines": "        const testComplyWithRequirements = regexPattern.test(bankRouting);",
+                "message": "The regular expression identified appears vulnerable to Regular Expression Denial of Service (ReDoS) through catastrophic backtracking. If the input is attacker controllable, this vulnerability can lead to systems being non-responsive or may crash due to ReDoS. Where possible, re-write the regex so as not to leverage backtracking or use a library that offers default protection against ReDoS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-1333: Inefficient Regular Expression Complexity"
+                    ],
+                    "functional-categories": [
+                        "regex::sink::regex",
+                        "web::source::cookie::express",
+                        "web::source::header::express",
+                        "web::source::http-body::express",
+                        "web::source::http-params::express",
+                        "web::source::url-path-params::express"
+                    ],
+                    "impact": "HIGH",
+                    "license": "Copyright 2023 Semgrep, Inc.",
+                    "likelihood": "LOW",
+                    "references": [
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+                        "https://owasp.org/www-community/attacks/Regular_expression_Denial_of_Service_-_ReDoS",
+                        "https://www.regular-expressions.info/catastrophic.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "pro_rules",
+                            "r_id": 92719,
+                            "rule_id": "JDUN3dD",
+                            "rv_id": 850627,
+                            "url": "https://semgrep.dev/playground/r/BjTe2y8/javascript.express.redos.express-redos.redos",
+                            "version_id": "BjTe2y8"
+                        }
+                    },
+                    "shortlink": "https://sg.run/2ZLz5",
+                    "source": "https://semgrep.dev/r/javascript.express.redos.express-redos.redos",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express",
+                        "nodejs"
+                    ],
+                    "vulnerability_class": [
+                        "Denial-of-Service (DoS)"
+                    ]
+                },
+                "metavars": {
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 16,
+                            "line": 50,
+                            "offset": 1562
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 50,
+                            "offset": 1559
+                        }
+                    },
+                    "$X": {
+                        "abstract_content": "([0-9]+)+\\#",
+                        "end": {
+                            "col": 42,
+                            "line": 59,
+                            "offset": 2118
+                        },
+                        "start": {
+                            "col": 31,
+                            "line": 59,
+                            "offset": 2107
+                        }
+                    },
+                    "$Y": {
+                        "abstract_content": "bankRouting",
+                        "end": {
+                            "col": 73,
+                            "line": 61,
+                            "offset": 2277
+                        },
+                        "start": {
+                            "col": 62,
+                            "line": 61,
+                            "offset": 2266
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/profile.js",
+            "start": {
+                "col": 44,
+                "line": 61,
+                "offset": 2248
+            }
+        },
+        {
+            "check_id": "javascript.express.needle.ssrf.ssrf",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 34,
+                "line": 16,
+                "offset": 432
+            },
+            "extra": {
+                "dataflow_trace": {
+                    "intermediate_vars": [
+                        {
+                            "content": "url",
+                            "location": {
+                                "end": {
+                                    "col": 22,
+                                    "line": 15,
+                                    "offset": 362
+                                },
+                                "path": "NodeGoat/app/routes/research.js",
+                                "start": {
+                                    "col": 19,
+                                    "line": 15,
+                                    "offset": 359
+                                }
+                            }
+                        }
+                    ],
+                    "taint_sink": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 34,
+                                    "line": 16,
+                                    "offset": 432
+                                },
+                                "path": "NodeGoat/app/routes/research.js",
+                                "start": {
+                                    "col": 31,
+                                    "line": 16,
+                                    "offset": 429
+                                }
+                            },
+                            "url"
+                        ]
+                    ],
+                    "taint_source": [
+                        "CliLoc",
+                        [
+                            {
+                                "end": {
+                                    "col": 34,
+                                    "line": 15,
+                                    "offset": 374
+                                },
+                                "path": "NodeGoat/app/routes/research.js",
+                                "start": {
+                                    "col": 25,
+                                    "line": 15,
+                                    "offset": 365
+                                }
+                            },
+                            "req.query"
+                        ]
+                    ]
+                },
+                "engine_kind": "OSS",
+                "fingerprint": "bf36ebc67583bff18e1f9353d2c2b4c7d09d1f9b3f673d4c68af02a482948e385d6d2e731010b77ab1a5f3f351db03772c063baeb3615acb261251482592f947_0",
+                "is_ignored": false,
+                "lines": "            return needle.get(url, (error, newResponse, body) => {",
+                "message": "Untrusted input might be used to build an HTTP request, which can lead to a Server-side request forgery (SSRF) vulnerability. SSRF allows an attacker to send crafted requests from the server side to other internal or external systems. SSRF can lead to unauthorized access to sensitive data and, in some cases, allow the attacker to control applications or systems that trust the vulnerable service. To prevent this vulnerability, avoid allowing user input to craft the base request. Instead, treat it as part of the path or query parameter and encode it appropriately. When user input is necessary to prepare the HTTP request, perform strict input validation. Additionally, whenever possible, use allowlists to only interact with expected, trusted domains.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-918: Server-Side Request Forgery (SSRF)"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "functional-categories": [
+                        "web::sink::http-request::needle",
+                        "web::source::cookie::express",
+                        "web::source::header::express",
+                        "web::source::http-body::express",
+                        "web::source::http-params::express",
+                        "web::source::url-path-params::express"
+                    ],
+                    "impact": "HIGH",
+                    "license": "Copyright 2023 Semgrep, Inc.",
+                    "likelihood": "MEDIUM",
+                    "owasp": [
+                        "A10:2021 - Server-Side Request Forgery (SSRF)"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A10_2021-Server-Side_Request_Forgery_%28SSRF%29"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "pro_rules",
+                            "r_id": 92718,
+                            "rule_id": "PeUJWgj",
+                            "rv_id": 850624,
+                            "url": "https://semgrep.dev/playground/r/GxTD9ll/javascript.express.needle.ssrf.ssrf",
+                            "version_id": "GxTD9ll"
+                        }
+                    },
+                    "shortlink": "https://sg.run/pKGPN",
+                    "source": "https://semgrep.dev/r/javascript.express.needle.ssrf.ssrf",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express",
+                        "nodejs"
+                    ],
+                    "vulnerability_class": [
+                        "Server-Side Request Forgery (SSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$F": {
+                        "abstract_content": "req.query.url",
+                        "end": {
+                            "col": 38,
+                            "line": 15,
+                            "offset": 378
+                        },
+                        "start": {
+                            "col": 25,
+                            "line": 15,
+                            "offset": 365
+                        }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "get",
+                        "end": {
+                            "col": 30,
+                            "line": 16,
+                            "offset": 428
+                        },
+                        "start": {
+                            "col": 27,
+                            "line": 16,
+                            "offset": 425
+                        }
+                    },
+                    "$REQ": {
+                        "abstract_content": "req",
+                        "end": {
+                            "col": 28,
+                            "line": 15,
+                            "offset": 368
+                        },
+                        "start": {
+                            "col": 25,
+                            "line": 15,
+                            "offset": 365
+                        }
+                    },
+                    "$URL": {
+                        "abstract_content": "url",
+                        "end": {
+                            "col": 34,
+                            "line": 16,
+                            "offset": 432
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "req.query.url+req.query.symbol",
+                            "svalue_end": {
+                                "col": 57,
+                                "line": 15,
+                                "offset": 397
+                            },
+                            "svalue_start": {
+                                "col": 25,
+                                "line": 15,
+                                "offset": 365
+                            }
+                        },
+                        "start": {
+                            "col": 31,
+                            "line": 16,
+                            "offset": 429
+                        }
+                    },
+                    "$X": {
+                        "abstract_content": "needle",
+                        "end": {
+                            "col": 26,
+                            "line": 16,
+                            "offset": 424
+                        },
+                        "start": {
+                            "col": 20,
+                            "line": 16,
+                            "offset": 418
+                        }
+                    },
+                    "$Y": {
+                        "abstract_content": "query",
+                        "end": {
+                            "col": 34,
+                            "line": 15,
+                            "offset": 374
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 15,
+                            "offset": 369
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/routes/research.js",
+            "start": {
+                "col": 31,
+                "line": 16,
+                "offset": 429
+            }
+        },
+        {
+            "check_id": "python.django.security.django-no-csrf-token.django-no-csrf-token",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 36,
+                "line": 63,
+                "offset": 2465
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "9c465e7ea3f4484321c34239596e90401e97dc7cfe2f582c49ff79b6d5b21b7fcdf508b61e582023417e5209e4b11c99cc1f355c4d01096a2032330a20c4c5d3_0",
+                "is_ignored": false,
+                "lines": "                            <form method=\"POST\" action=\"/benefits\">\n                                <div class=\"input-group\">\n                                    <input type=\"hidden\" name=\"userId\" value=\"{{user._id.toString()}}\"></input>\n                                    <input type=\"date\" class=\"form-control\" name=\"benefitStartDate\" value=\"{{user.benefitStartDate}}\"></input>\n                                    <span class=\"input-group-btn\">\n                                        <button type=\"submit\" class=\"btn btn-default\">Save</button>\n                                    </span>\n                                </div>\n                                <!-- /input-group -->\n                            </form>",
+                "message": "Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "references": [
+                        "https://docs.djangoproject.com/en/4.2/howto/csrf/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 73471,
+                            "rule_id": "PeUyYG",
+                            "rv_id": 834427,
+                            "url": "https://semgrep.dev/playground/r/yeTNgk0/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                            "version_id": "yeTNgk0"
+                        }
+                    },
+                    "shortlink": "https://sg.run/N0Bp",
+                    "source": "https://semgrep.dev/r/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "django"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site Request Forgery (CSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "POST",
+                        "end": {
+                            "col": 5,
+                            "line": 1,
+                            "offset": 4
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "POST",
+                        "end": {
+                            "col": 47,
+                            "line": 54,
+                            "offset": 1791
+                        },
+                        "start": {
+                            "col": 43,
+                            "line": 54,
+                            "offset": 1787
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/benefits.html",
+            "start": {
+                "col": 29,
+                "line": 54,
+                "offset": 1773
+            }
+        },
+        {
+            "check_id": "python.django.security.django-no-csrf-token.django-no-csrf-token",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 36,
+                "line": 127,
+                "offset": 5801
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "18639565a98b94784b331bb01f5587fd167a05461805d67e1314f78aeb2e1e4344980ed63219fb1db30ef2ad70d23c8beb95a0661bd4ed3504915c10042ee334_0",
+                "is_ignored": false,
+                "lines": "                            <form method=\"post\" role=\"form\" method=\"post\" id=\"loginform\">\n                                <div class=\"form-group\">\n                                    <label for=\"userName\">User Name</label>\n                                    <input type=\"text\" class=\"form-control\" id=\"userName\" name=\"userName\" value=\"{{userName}}\" placeholder=\"Enter User Name\">\n                                </div>\n\n                                <div class=\"form-group\">\n                                    <label for=\"password\">Password</label>\n                                    <input type=\"password\" class=\"form-control\" id=\"password\" name=\"password\" value=\"{{password}}\" placeholder=\"Enter Password\">\n                                </div>\n                                <input type=\"hidden\" name=\"_csrf\" value=\"{{csrftoken}}\" />\n\n                                <div class=\"row\">\n                                    <div class=\"col-lg-4\"><a href=\"/signup\">New user? Sign Up</a>\n                                    </div>\n                                    <div class=\"col-lg-5\"></div>\n                                    <div class=\"col-lg-3\">\n                                        <button type=\"submit\" class=\"btn btn-danger\">Submit</button>\n                                    </div>\n                                </div>\n                            </form>",
+                "message": "Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "references": [
+                        "https://docs.djangoproject.com/en/4.2/howto/csrf/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 73471,
+                            "rule_id": "PeUyYG",
+                            "rv_id": 834427,
+                            "url": "https://semgrep.dev/playground/r/yeTNgk0/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                            "version_id": "yeTNgk0"
+                        }
+                    },
+                    "shortlink": "https://sg.run/N0Bp",
+                    "source": "https://semgrep.dev/r/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "django"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site Request Forgery (CSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "post",
+                        "end": {
+                            "col": 5,
+                            "line": 1,
+                            "offset": 4
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "post",
+                        "end": {
+                            "col": 47,
+                            "line": 107,
+                            "offset": 4469
+                        },
+                        "start": {
+                            "col": 43,
+                            "line": 107,
+                            "offset": 4465
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/login.html",
+            "start": {
+                "col": 29,
+                "line": 107,
+                "offset": 4451
+            }
+        },
+        {
+            "check_id": "python.django.security.django-no-csrf-token.django-no-csrf-token",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 24,
+                "line": 23,
+                "offset": 793
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "11eeed10170a848e339e13fad5e68d4fd1709d0a090527dbf036177a6eeba8aa4a32304f25046299da01d349c8723dc8896649a52c48b5f997ece3852b489b1a_0",
+                "is_ignored": false,
+                "lines": "                <form action=\"/memos\" method=\"post\" role=\"search\">\n\n                    <div class=\"form-group\">\n                        <textarea class=\"form-control\" name=\"memo\"></textarea>\n                        <p class=\"help-block\">You may use Markdown syntax to format your memo</p>\n                    </div>\n\n                    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n                </form>",
+                "message": "Manually-created forms in django templates should specify a csrf_token to prevent CSRF attacks.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": "CWE-352: Cross-Site Request Forgery (CSRF)",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "MEDIUM",
+                    "references": [
+                        "https://docs.djangoproject.com/en/4.2/howto/csrf/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 73471,
+                            "rule_id": "PeUyYG",
+                            "rv_id": 834427,
+                            "url": "https://semgrep.dev/playground/r/yeTNgk0/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                            "version_id": "yeTNgk0"
+                        }
+                    },
+                    "shortlink": "https://sg.run/N0Bp",
+                    "source": "https://semgrep.dev/r/python.django.security.django-no-csrf-token.django-no-csrf-token",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "django"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site Request Forgery (CSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "post",
+                        "end": {
+                            "col": 5,
+                            "line": 1,
+                            "offset": 4
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$METHOD": {
+                        "abstract_content": "post",
+                        "end": {
+                            "col": 51,
+                            "line": 15,
+                            "offset": 420
+                        },
+                        "start": {
+                            "col": 47,
+                            "line": 15,
+                            "offset": 416
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/memos.html",
+            "start": {
+                "col": 17,
+                "line": 15,
+                "offset": 386
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 93,
+                "line": 78,
+                "offset": 4058
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "173ea6b4268ecf280414e7248c6cca0b9e72eb0bf8cb9f198bc4753fdd1d125b83098e8d448f8ab2a4b2e93f5569e11107b2029632eebf79d5ecacf4663a55e9_0",
+                "is_ignored": false,
+                "lines": "                    <a href=\"{{firstNameSafeString}}\">Google search this profile by name</a>",
+                "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. If using a relative URL, start with a literal forward slash and concatenate the URL, like this: href='/{{link}}'. You may also consider setting the Content Security Policy (CSP) header.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss#:~:text=javascript:%20URI",
+                        "https://github.com/pugjs/pug/issues/2952"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9284,
+                            "rule_id": "AbUzlj",
+                            "rv_id": 834088,
+                            "url": "https://semgrep.dev/playground/r/e1TDkjP/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+                            "version_id": "e1TDkjP"
+                        }
+                    },
+                    "shortlink": "https://sg.run/8yOq",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.xss.mustache.var-in-href.var-in-href",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "\"",
+                        "end": {
+                            "col": 30,
+                            "line": 78,
+                            "offset": 3995
+                        },
+                        "start": {
+                            "col": 29,
+                            "line": 78,
+                            "offset": 3994
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/profile.html",
+            "start": {
+                "col": 21,
+                "line": 78,
+                "offset": 3986
+            }
+        },
+        {
+            "check_id": "python.django.security.audit.xss.template-href-var.template-href-var",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 54,
+                "line": 78,
+                "offset": 4019
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "8dc4d6f23f0e50b2916714584869d00b01073f71b8f1ea794522d5a38ad40e5c13ae9f00f5260693b5a78f625c1b04b6b175bb04d24c0d569bc76c167448cdc1_0",
+                "is_ignored": false,
+                "lines": "                    <a href=\"{{firstNameSafeString}}\">Google search this profile by name</a>",
+                "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. Use the 'url' template tag to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss",
+                        "https://docs.djangoproject.com/en/3.1/ref/templates/builtins/#url",
+                        "https://content-security-policy.com/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9488,
+                            "rule_id": "DbUpDg",
+                            "rv_id": 834423,
+                            "url": "https://semgrep.dev/playground/r/X0T5KWd/python.django.security.audit.xss.template-href-var.template-href-var",
+                            "version_id": "X0T5KWd"
+                        }
+                    },
+                    "shortlink": "https://sg.run/4x25",
+                    "source": "https://semgrep.dev/r/python.django.security.audit.xss.template-href-var.template-href-var",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "django"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/profile.html",
+            "start": {
+                "col": 24,
+                "line": 78,
+                "offset": 3989
+            }
+        },
+        {
+            "check_id": "python.flask.security.xss.audit.template-href-var.template-href-var",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 54,
+                "line": 78,
+                "offset": 4019
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "2383877d75ae606ee9c9a06abd8d15be238e99b3720f8319b7c015a43b4ab63e2558217e234e0c781f1b598399667218c17e308c39c6a8a84faf262c298beab3_0",
+                "is_ignored": false,
+                "lines": "                    <a href=\"{{firstNameSafeString}}\">Google search this profile by name</a>",
+                "message": "Detected a template variable used in an anchor tag with the 'href' attribute. This allows a malicious actor to input the 'javascript:' URI and is subject to cross- site scripting (XSS) attacks. Use 'url_for()' to safely generate a URL. You may also consider setting the Content Security Policy (CSP) header.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-79: Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2017 - Cross-Site Scripting (XSS)",
+                        "A03:2021 - Injection"
+                    ],
+                    "references": [
+                        "https://flask.palletsprojects.com/en/1.1.x/security/#cross-site-scripting-xss",
+                        "https://content-security-policy.com/"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9552,
+                            "rule_id": "6JUjej",
+                            "rv_id": 834506,
+                            "url": "https://semgrep.dev/playground/r/JdTlR55/python.flask.security.xss.audit.template-href-var.template-href-var",
+                            "version_id": "JdTlR55"
+                        }
+                    },
+                    "shortlink": "https://sg.run/Do7o",
+                    "source": "https://semgrep.dev/r/python.flask.security.xss.audit.template-href-var.template-href-var",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "flask"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site-Scripting (XSS)"
+                    ]
+                },
+                "metavars": {},
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/profile.html",
+            "start": {
+                "col": 24,
+                "line": 78,
+                "offset": 3989
+            }
+        },
+        {
+            "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 198,
+                "line": 207,
+                "offset": 11392
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "8129bd5ce62fae74b0090ac7fb26930f39d6aca35fadc99ed1055d8563d01545eb9176f9df3121c4ad9713bfaec7832de7af80568f25ed8b1d78a701a23b0a3e_0",
+                "is_ignored": false,
+                "lines": "                            <li><a href=\"http://recxltd.blogspot.sg/2012/03/seven-web-server-http-headers-that.html\">Seven Web Server HTTP Headers that Improve Web Application Security for Free</a>",
+                "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-319: Cleartext Transmission of Sensitive Information"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://cwe.mitre.org/data/definitions/319.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 39193,
+                            "rule_id": "AbUnNo",
+                            "rv_id": 833891,
+                            "url": "https://semgrep.dev/playground/r/ExTrDzp/html.security.plaintext-http-link.plaintext-http-link",
+                            "version_id": "ExTrDzp"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RA5q",
+                    "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$URL": {
+                        "abstract_content": "http://recxltd.blogspot.sg/2012/03/seven-web-server-http-headers-that.html",
+                        "end": {
+                            "col": 116,
+                            "line": 207,
+                            "offset": 11310
+                        },
+                        "start": {
+                            "col": 42,
+                            "line": 207,
+                            "offset": 11236
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/tutorial/a2.html",
+            "start": {
+                "col": 33,
+                "line": 207,
+                "offset": 11227
+            }
+        },
+        {
+            "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 97,
+                "line": 209,
+                "offset": 11523
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "c97027235e022b160d61c31be28f576836cc1f4ceb2396f87c24758818b1263ccee9f5070ffbcccff6473f199de5e6d90529a48e97e31ec74f0181b6b25d602d_0",
+                "is_ignored": false,
+                "lines": "                            <li><a href=\"http://passportjs.org/guide/authenticate/\">Passport</a> authentication middleware</li>",
+                "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-319: Cleartext Transmission of Sensitive Information"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://cwe.mitre.org/data/definitions/319.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 39193,
+                            "rule_id": "AbUnNo",
+                            "rv_id": 833891,
+                            "url": "https://semgrep.dev/playground/r/ExTrDzp/html.security.plaintext-http-link.plaintext-http-link",
+                            "version_id": "ExTrDzp"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RA5q",
+                    "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$URL": {
+                        "abstract_content": "http://passportjs.org/guide/authenticate/",
+                        "end": {
+                            "col": 83,
+                            "line": 209,
+                            "offset": 11509
+                        },
+                        "start": {
+                            "col": 42,
+                            "line": 209,
+                            "offset": 11468
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/tutorial/a2.html",
+            "start": {
+                "col": 33,
+                "line": 209,
+                "offset": 11459
+            }
+        },
+        {
+            "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 118,
+                "line": 210,
+                "offset": 11672
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e69d33fc5a99c2e77517f75db7492cbc0759e3a8ce47cb300457577b9ee461e8879f11ae916059f5e21e7dd60089bc1c32ddad43947eef10738591055059222a_0",
+                "is_ignored": false,
+                "lines": "                            <li><a href=\"http://en.wikipedia.org/wiki/Session_fixation\">CWE-384: Session Fixation</a>",
+                "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-319: Cleartext Transmission of Sensitive Information"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://cwe.mitre.org/data/definitions/319.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 39193,
+                            "rule_id": "AbUnNo",
+                            "rv_id": 833891,
+                            "url": "https://semgrep.dev/playground/r/ExTrDzp/html.security.plaintext-http-link.plaintext-http-link",
+                            "version_id": "ExTrDzp"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RA5q",
+                    "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$URL": {
+                        "abstract_content": "http://en.wikipedia.org/wiki/Session_fixation",
+                        "end": {
+                            "col": 87,
+                            "line": 210,
+                            "offset": 11641
+                        },
+                        "start": {
+                            "col": 42,
+                            "line": 210,
+                            "offset": 11596
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/tutorial/a2.html",
+            "start": {
+                "col": 33,
+                "line": 210,
+                "offset": 11587
+            }
+        },
+        {
+            "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 282,
+                "line": 50,
+                "offset": 3140
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "a951ff3a5cc39f11fc8fb9fd38e7c09271ac23430aefb73df75245767693aa8d70c9da3d3b5402e0a1aef3d25369e82c336c966008c5c8df27fddf1caeece6df_0",
+                "is_ignored": false,
+                "lines": "                        Use latest stable version of node.js and express (or other web framework you are using). Keep a watch on published vulnerabilities of these. The vulnerabilities for node.js and express.js can be found <a href=\"http://blog.nodejs.org/vulnerability/\">here</a> and",
+                "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-319: Cleartext Transmission of Sensitive Information"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://cwe.mitre.org/data/definitions/319.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 39193,
+                            "rule_id": "AbUnNo",
+                            "rv_id": 833891,
+                            "url": "https://semgrep.dev/playground/r/ExTrDzp/html.security.plaintext-http-link.plaintext-http-link",
+                            "version_id": "ExTrDzp"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RA5q",
+                    "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$URL": {
+                        "abstract_content": "http://blog.nodejs.org/vulnerability/",
+                        "end": {
+                            "col": 272,
+                            "line": 50,
+                            "offset": 3130
+                        },
+                        "start": {
+                            "col": 235,
+                            "line": 50,
+                            "offset": 3093
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/tutorial/a5.html",
+            "start": {
+                "col": 226,
+                "line": 50,
+                "offset": 3084
+            }
+        },
+        {
+            "check_id": "html.security.plaintext-http-link.plaintext-http-link",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 95,
+                "line": 51,
+                "offset": 3239
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "0385613bdd93369fccb024ec67b5181b8c2b2ba93beac36e2e127ace4b28c928776c9f8c9e5dfd4383e763b08583acf347f102125ea475afcf4575233742f9e7_0",
+                "is_ignored": false,
+                "lines": "                        <a href=\"http://expressjs.com/advanced/security-updates.html\">here</a>, respectively.",
+                "message": "This link points to a plaintext HTTP URL. Prefer an encrypted HTTPS URL if possible.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "HIGH",
+                    "cwe": [
+                        "CWE-319: Cleartext Transmission of Sensitive Information"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A03:2017 - Sensitive Data Exposure",
+                        "A02:2021 - Cryptographic Failures"
+                    ],
+                    "references": [
+                        "https://cwe.mitre.org/data/definitions/319.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 39193,
+                            "rule_id": "AbUnNo",
+                            "rv_id": 833891,
+                            "url": "https://semgrep.dev/playground/r/ExTrDzp/html.security.plaintext-http-link.plaintext-http-link",
+                            "version_id": "ExTrDzp"
+                        }
+                    },
+                    "shortlink": "https://sg.run/RA5q",
+                    "source": "https://semgrep.dev/r/html.security.plaintext-http-link.plaintext-http-link",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$URL": {
+                        "abstract_content": "http://expressjs.com/advanced/security-updates.html",
+                        "end": {
+                            "col": 85,
+                            "line": 51,
+                            "offset": 3229
+                        },
+                        "start": {
+                            "col": 34,
+                            "line": 51,
+                            "offset": 3178
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/app/views/tutorial/a5.html",
+            "start": {
+                "col": 25,
+                "line": 51,
+                "offset": 3169
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-private-key.detected-private-key",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 65,
+                "line": 2,
+                "offset": 96
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "0fd7411235a5d1ad6cc93a1c2b4fa04c0c589354a554525e0a96b46cfe8155b85aef276a02f844f4fe84c67620581aac51590422888a8fafea4e4163adb1aa3e_0",
+                "is_ignored": false,
+                "lines": "-----BEGIN RSA PRIVATE KEY-----\nMIICXgIBAAKBgQCfn8uP4FuHaaAPrMkcl1fNMQM5EGMT4nnNSVoaEVdiDLc6P0mC",
+                "message": "Private Key detected. This is a sensitive credential and should not be hardcoded here. Instead, store this in a separate, private file.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9070,
+                            "rule_id": "7KUQ0p",
+                            "rv_id": 833786,
+                            "url": "https://semgrep.dev/playground/r/vdTOzge/generic.secrets.security.detected-private-key.detected-private-key",
+                            "version_id": "vdTOzge"
+                        }
+                    },
+                    "shortlink": "https://sg.run/b7dr",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-private-key.detected-private-key",
+                    "source-rule-url": "https://github.com/grab/secret-scanner/blob/master/scanner/signatures/pattern.go",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {
+                    "$1": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 4,
+                            "line": 1,
+                            "offset": 3
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 1,
+                            "offset": 0
+                        }
+                    },
+                    "$KEY": {
+                        "abstract_content": "MIICXgIBAAKBgQCfn8uP4FuHaaAPrMkcl1fNMQM5EGMT4nnNSVoaEVdiDLc6P0mC",
+                        "end": {
+                            "col": 65,
+                            "line": 2,
+                            "offset": 96
+                        },
+                        "start": {
+                            "col": 1,
+                            "line": 2,
+                            "offset": 32
+                        }
+                    },
+                    "$TYPE": {
+                        "abstract_content": "RSA",
+                        "end": {
+                            "col": 15,
+                            "line": 1,
+                            "offset": 14
+                        },
+                        "start": {
+                            "col": 12,
+                            "line": 1,
+                            "offset": 11
+                        }
+                    }
+                },
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/artifacts/cert/server.key",
+            "start": {
+                "col": 1,
+                "line": 1,
+                "offset": 0
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 85,
+                "line": 19,
+                "offset": 564
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "344619f50393c8b99640bf0f42e5687feacb44a6917c3b2a476f52383d18809168846d56cd08d1673d4dbfcc56496474398f04f72e174f0b71ba773d43188803_0",
+                "is_ignored": false,
+                "lines": "        //\"password\" : \"$2a$10$8Zo/1e8KM8QzqOKqbDlYlONBOzukWXrM.IiyzqHRYDXqwB3gzDsba\", // Admin_123",
+                "message": "bcrypt hash detected",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 10043,
+                            "rule_id": "PeUk0Q",
+                            "rv_id": 833762,
+                            "url": "https://semgrep.dev/playground/r/WrTdp9P/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                            "version_id": "WrTdp9P"
+                        }
+                    },
+                    "shortlink": "https://sg.run/3A8G",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets",
+                        "bcrypt"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {},
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/artifacts/db-reset.js",
+            "start": {
+                "col": 25,
+                "line": 19,
+                "offset": 504
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 86,
+                "line": 28,
+                "offset": 875
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "344619f50393c8b99640bf0f42e5687feacb44a6917c3b2a476f52383d18809168846d56cd08d1673d4dbfcc56496474398f04f72e174f0b71ba773d43188803_1",
+                "is_ignored": false,
+                "lines": "        // \"password\" : \"$2a$10$RNFhiNmt2TTpVO9cqZElb.LQM9e1mzDoggEHufLjAnAKImc6FNE86\",// User1_123",
+                "message": "bcrypt hash detected",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 10043,
+                            "rule_id": "PeUk0Q",
+                            "rv_id": 833762,
+                            "url": "https://semgrep.dev/playground/r/WrTdp9P/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                            "version_id": "WrTdp9P"
+                        }
+                    },
+                    "shortlink": "https://sg.run/3A8G",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets",
+                        "bcrypt"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {},
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/artifacts/db-reset.js",
+            "start": {
+                "col": 26,
+                "line": 28,
+                "offset": 815
+            }
+        },
+        {
+            "check_id": "generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 85,
+                "line": 36,
+                "offset": 1162
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "344619f50393c8b99640bf0f42e5687feacb44a6917c3b2a476f52383d18809168846d56cd08d1673d4dbfcc56496474398f04f72e174f0b71ba773d43188803_2",
+                "is_ignored": false,
+                "lines": "        //\"password\" : \"$2a$10$Tlx2cNv15M0Aia7wyItjsepeA8Y6PyBYaNdQqvpxkIUlcONf1ZHyq\", // User2_123",
+                "message": "bcrypt hash detected",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-798: Use of Hard-coded Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A07:2021 - Identification and Authentication Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A07_2021-Identification_and_Authentication_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 10043,
+                            "rule_id": "PeUk0Q",
+                            "rv_id": 833762,
+                            "url": "https://semgrep.dev/playground/r/WrTdp9P/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                            "version_id": "WrTdp9P"
+                        }
+                    },
+                    "shortlink": "https://sg.run/3A8G",
+                    "source": "https://semgrep.dev/r/generic.secrets.security.detected-bcrypt-hash.detected-bcrypt-hash",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "secrets",
+                        "bcrypt"
+                    ],
+                    "vulnerability_class": [
+                        "Hard-coded Secrets"
+                    ]
+                },
+                "metavars": {},
+                "severity": "ERROR",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/artifacts/db-reset.js",
+            "start": {
+                "col": 25,
+                "line": 36,
+                "offset": 1102
+            }
+        },
+        {
+            "check_id": "yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 8,
+                "line": 13,
+                "offset": 320
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "60535d97991f47c8d2a3f6fb46d407fa7e981cebf93fd1b9fa394ed723ea3d4ac6a274e8b255172f9d416d21258eb58a203675ffbc57e5018770e1c072a2381f_0",
+                "is_ignored": false,
+                "lines": "  mongo:",
+                "message": "Service 'mongo' allows for privilege escalation via setuid or setgid binaries. Add 'no-new-privileges:true' in 'security_opt' to prevent this.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-732: Incorrect Permission Assignment for Critical Resource"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://raesene.github.io/blog/2019/06/01/docker-capabilities-and-no-new-privs/",
+                        "https://www.kernel.org/doc/Documentation/prctl/no_new_privs.txt",
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-4-add-no-new-privileges-flag"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 10054,
+                            "rule_id": "qNUoWr",
+                            "rv_id": 835301,
+                            "url": "https://semgrep.dev/playground/r/vdTOQ35/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+                            "version_id": "vdTOQ35"
+                        }
+                    },
+                    "shortlink": "https://sg.run/0n8q",
+                    "source": "https://semgrep.dev/r/yaml.docker-compose.security.no-new-privileges.no-new-privileges",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "docker-compose"
+                    ],
+                    "vulnerability_class": [
+                        "Improper Authorization"
+                    ]
+                },
+                "metavars": {
+                    "$SERVICE": {
+                        "abstract_content": "mongo",
+                        "end": {
+                            "col": 8,
+                            "line": 13,
+                            "offset": 320
+                        },
+                        "start": {
+                            "col": 3,
+                            "line": 13,
+                            "offset": 315
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/docker-compose.yml",
+            "start": {
+                "col": 3,
+                "line": 13,
+                "offset": 315
+            }
+        },
+        {
+            "check_id": "yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 8,
+                "line": 13,
+                "offset": 320
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "a064e9aa895bba7ab871e9c1d1008ceb730b28c546ea09b398b3bd4435b68b5c2b26d307815067bcc54a2218515043ef29ec06692be32e2da21b1845b4ed79c7_0",
+                "is_ignored": false,
+                "lines": "  mongo:",
+                "message": "Service 'mongo' is running with a writable root filesystem. This may allow malicious applications to download and run additional payloads, or modify container files. If an application inside a container has to save something temporarily consider using a tmpfs. Add 'read_only: true' to this service to prevent this.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-732: Incorrect Permission Assignment for Critical Resource"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A05:2021 - Security Misconfiguration",
+                        "A06:2017 - Security Misconfiguration"
+                    ],
+                    "references": [
+                        "https://docs.docker.com/compose/compose-file/compose-file-v3/#domainname-hostname-ipc-mac_address-privileged-read_only-shm_size-stdin_open-tty-user-working_dir",
+                        "https://blog.atomist.com/security-of-docker-kubernetes/",
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html#rule-8-set-filesystem-and-volumes-to-read-only"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 10132,
+                            "rule_id": "v8U5vN",
+                            "rv_id": 835305,
+                            "url": "https://semgrep.dev/playground/r/ExTrWYr/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+                            "version_id": "ExTrWYr"
+                        }
+                    },
+                    "shortlink": "https://sg.run/e4JE",
+                    "source": "https://semgrep.dev/r/yaml.docker-compose.security.writable-filesystem-service.writable-filesystem-service",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "docker-compose"
+                    ],
+                    "vulnerability_class": [
+                        "Improper Authorization"
+                    ]
+                },
+                "metavars": {
+                    "$SERVICE": {
+                        "abstract_content": "mongo",
+                        "end": {
+                            "col": 8,
+                            "line": 13,
+                            "offset": 320
+                        },
+                        "start": {
+                            "col": 3,
+                            "line": 13,
+                            "offset": 315
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/docker-compose.yml",
+            "start": {
+                "col": 3,
+                "line": 13,
+                "offset": 315
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+            "TP":0,
+            "FP":1,
+            "end": {
+                "col": 22,
+                "line": 15,
+                "offset": 590
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "9d9d6800e8cba9af8ce96c7a57503514c6b8f2361023f193284840d57c7f982a5a146ebc51bf1f3b6c5f35399536da14ff49dbb7bfd8e531484466fb8706d8a0_0",
+                "is_ignored": false,
+                "lines": "const app = express(); // Web framework to handle routing requests",
+                "message": "A CSRF middleware was not detected in your express application. Ensure you are either using one such as `csurf` or `csrf` (see rule references) and/or you are properly doing CSRF validation in your routes with a token or cookies.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-352: Cross-Site Request Forgery (CSRF)"
+                    ],
+                    "cwe2021-top25": true,
+                    "cwe2022-top25": true,
+                    "impact": "HIGH",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A01:2021 - Broken Access Control"
+                    ],
+                    "references": [
+                        "https://www.npmjs.com/package/csurf",
+                        "https://www.npmjs.com/package/csrf",
+                        "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 22551,
+                            "rule_id": "wdUKEq",
+                            "rv_id": 834059,
+                            "url": "https://semgrep.dev/playground/r/5PTyDGX/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+                            "version_id": "5PTyDGX"
+                        }
+                    },
+                    "shortlink": "https://sg.run/BxzR",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-check-csurf-middleware-usage.express-check-csurf-middleware-usage",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "javascript",
+                        "typescript",
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cross-Site Request Forgery (CSRF)"
+                    ]
+                },
+                "metavars": {
+                    "$APP": {
+                        "abstract_content": "app",
+                        "end": {
+                            "col": 10,
+                            "line": 15,
+                            "offset": 578
+                        },
+                        "start": {
+                            "col": 7,
+                            "line": 15,
+                            "offset": 575
+                        }
+                    },
+                    "$EXPRESS": {
+                        "abstract_content": "express",
+                        "end": {
+                            "col": 20,
+                            "line": 15,
+                            "offset": 588
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 15,
+                            "offset": 581
+                        }
+                    }
+                },
+                "severity": "INFO",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 7,
+                "line": 15,
+                "offset": 575
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "87bfb570148e00f425fee71e9d8e06c8bbdfa2c543a6897d9b700bfb478279183804168be1782ff0a1ac12a1db2506eeaa32b4cd218490db307b4905ca254c58_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Don\u2019t use the default session cookie name Using the default session cookie name can open your app to attacks. The security issue posed is similar to X-Powered-By: a potential attacker can use it to fingerprint the server and target attacks accordingly.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9266,
+                            "rule_id": "eqU8k2",
+                            "rv_id": 834061,
+                            "url": "https://semgrep.dev/playground/r/RGTKGxb/javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+                            "version_id": "RGTKGxb"
+                        }
+                    },
+                    "shortlink": "https://sg.run/1Z5x",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-default-name",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "72d79484555da2e1b8029578deb0d2938052efdbd18e594c08516cc79dffd356b37a0df6f4cc0a3f51e42e14c2e381604c34ad66ee65deb18dc56b8821c95302_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Default session middleware settings: `domain` not set. It indicates the domain of the cookie; use it to compare against the domain of the server in which the URL is being requested. If they match, then check the path attribute next.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9269,
+                            "rule_id": "ZqU5Pn",
+                            "rv_id": 834064,
+                            "url": "https://semgrep.dev/playground/r/DkTG0bd/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+                            "version_id": "DkTG0bd"
+                        }
+                    },
+                    "shortlink": "https://sg.run/rd41",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-domain",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e077d47c9ab237ffe490b51a4a83d6c0adc29484738ce505f40a8414c635b425107071e8fea9bec73670ef1200efb09446f7d026292111e396b258ad12f1ce96_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Default session middleware settings: `expires` not set. Use it to set expiration date for persistent cookies.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9271,
+                            "rule_id": "EwU2DZ",
+                            "rv_id": 834066,
+                            "url": "https://semgrep.dev/playground/r/0bTwbzy/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+                            "version_id": "0bTwbzy"
+                        }
+                    },
+                    "shortlink": "https://sg.run/N4eG",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-expires",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "8d988a8dbab3705857e072d081906fdadf0b7e81bb166509c25ada12e9dab216a7a234af9da0cc88deaa2b22f8250d0e5fe0423f041c2d84b268c27cba243dc4_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Default session middleware settings: `httpOnly` not set. It ensures the cookie is sent only over HTTP(S), not client JavaScript, helping to protect against cross-site scripting attacks.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9268,
+                            "rule_id": "d8UjGo",
+                            "rv_id": 834063,
+                            "url": "https://semgrep.dev/playground/r/BjTe0L2/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+                            "version_id": "BjTe0L2"
+                        }
+                    },
+                    "shortlink": "https://sg.run/ydBO",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-httponly",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "2014812931d65a78b26e25ad36c53773b1c9bc399712000edf9cc58f63adea3f9e822875ac1ab1e77b1bba94ee2f8999741b20e54f40c24ab2f3fb2d747b06ed_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Default session middleware settings: `path` not set. It indicates the path of the cookie; use it to compare against the request path. If this and domain match, then send the cookie in the request.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9270,
+                            "rule_id": "nJUz4X",
+                            "rv_id": 834065,
+                            "url": "https://semgrep.dev/playground/r/WrTdpKW/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+                            "version_id": "WrTdpKW"
+                        }
+                    },
+                    "shortlink": "https://sg.run/b7pd",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-path",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 7,
+                "line": 102,
+                "offset": 3439
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "d2069004c608c9cb2e6671f20d9167b834241bc713be23dae0492260feea1ba3c731d481c12df1366f03e193a6de5bf15da249a1ea8eecf4f50e9f0f2ce38bcc_0",
+                "is_ignored": false,
+                "lines": "    app.use(session({\n        // genid: (req) => {\n        //    return genuuid() // use UUIDs for session IDs\n        //},\n        secret: cookieSecret,\n        // Both mandatory in Express v4\n        saveUninitialized: true,\n        resave: true\n        /*\n        // Fix for A5 - Security MisConfig\n        // Use generic cookie name\n        key: \"sessionId\",\n        */\n\n        /*\n        // Fix for A3 - XSS\n        // TODO: Add \"maxAge\"\n        cookie: {\n            httpOnly: true\n            // Remember to start an HTTPS server to get this working\n            // secure: true\n        }\n        */\n\n    }));",
+                "message": "Default session middleware settings: `secure` not set. It ensures the browser only sends the cookie over HTTPS.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "MEDIUM",
+                    "cwe": [
+                        "CWE-522: Insufficiently Protected Credentials"
+                    ],
+                    "cwe2021-top25": true,
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "HIGH",
+                    "owasp": [
+                        "A02:2017 - Broken Authentication",
+                        "A04:2021 - Insecure Design"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A04_2021-Insecure_Design"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9267,
+                            "rule_id": "v8Unzw",
+                            "rv_id": 834062,
+                            "url": "https://semgrep.dev/playground/r/A8T37lY/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+                            "version_id": "A8T37lY"
+                        }
+                    },
+                    "shortlink": "https://sg.run/9oKz",
+                    "source": "https://semgrep.dev/r/javascript.express.security.audit.express-cookie-settings.express-cookie-session-no-secure",
+                    "source-rule-url": "https://expressjs.com/en/advanced/best-practice-security.html",
+                    "subcategory": [
+                        "vuln"
+                    ],
+                    "technology": [
+                        "express"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$SESSION": {
+                        "abstract_content": "session",
+                        "end": {
+                            "col": 20,
+                            "line": 78,
+                            "offset": 2844
+                        },
+                        "start": {
+                            "col": 13,
+                            "line": 78,
+                            "offset": 2837
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 13,
+                "line": 78,
+                "offset": 2837
+            }
+        },
+        {
+            "check_id": "problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+            "TP":1,
+            "FP":0,
+            "end": {
+                "col": 9,
+                "line": 145,
+                "offset": 4506
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "8395431c402fbaf588c861c8f4b2758d383cd247ab04e89bfc4f0fc8e1ac98c6143c3ef965d87bb72ff418945f8c52a8ce2d046d75ad4a2664d9f2b8cff3bd03_0",
+                "is_ignored": false,
+                "lines": "    http.createServer(app).listen(port, () => {",
+                "message": "Checks for any usage of http servers instead of https servers. Encourages the usage of https protocol instead of http, which does not have TLS and is therefore unencrypted. Using http can lead to man-in-the-middle attacks in which the attacker is able to read sensitive information.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": "CWE-319: Cleartext Transmission of Sensitive Information",
+                    "impact": "MEDIUM",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A02:2021 - Cryptographic Failures",
+                        "A03:2017 - Sensitive Data Exposure"
+                    ],
+                    "references": [
+                        "https://nodejs.org/api/http.html#http_class_http_agent",
+                        "https://groups.google.com/g/rubyonrails-security/c/NCCsca7TEtY"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 9430,
+                            "rule_id": "7KUQAE",
+                            "rv_id": 834340,
+                            "url": "https://semgrep.dev/playground/r/7ZTx97o/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                            "version_id": "7ZTx97o"
+                        }
+                    },
+                    "shortlink": "https://sg.run/x1zL",
+                    "source": "https://semgrep.dev/r/problem-based-packs.insecure-transport.js-node.using-http-server.using-http-server",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "node.js"
+                    ],
+                    "vulnerability": "Insecure Transport",
+                    "vulnerability_class": [
+                        "Mishandled Sensitive Information"
+                    ]
+                },
+                "metavars": {
+                    "$FUNC": {
+                        "abstract_content": "createServer",
+                        "end": {
+                            "col": 22,
+                            "line": 145,
+                            "offset": 4519
+                        },
+                        "start": {
+                            "col": 10,
+                            "line": 145,
+                            "offset": 4507
+                        }
+                    },
+                    "$HTTP": {
+                        "abstract_content": "http",
+                        "end": {
+                            "col": 9,
+                            "line": 145,
+                            "offset": 4506
+                        },
+                        "propagated_value": {
+                            "svalue_abstract_content": "require(\"http\")",
+                            "svalue_end": {
+                                "col": 29,
+                                "line": 12,
+                                "offset": 483
+                            },
+                            "svalue_start": {
+                                "col": 14,
+                                "line": 12,
+                                "offset": 468
+                            }
+                        },
+                        "start": {
+                            "col": 5,
+                            "line": 145,
+                            "offset": 4502
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "NodeGoat/server.js",
+            "start": {
+                "col": 5,
+                "line": 145,
+                "offset": 4502
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.90.0"
+}

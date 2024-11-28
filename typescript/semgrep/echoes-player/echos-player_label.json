@@ -1,0 +1,160 @@
+{
+    "results": [
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,
+            "end": {
+                "col": 112,
+                "line": 4,
+                "offset": 126
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "dce953075452e65d2fa527fb821fc175c0f47945ba58caa8bc88022cc77235e32c3a06f5b2e8447d6911194d5a66af1bc9e16ba46c8084f394a740f22a5c5585_0",
+                "is_ignored": false,
+                "lines": "  <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css\">",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css\"",
+                        "end": {
+                            "col": 111,
+                            "line": 4,
+                            "offset": 125
+                        },
+                        "start": {
+                            "col": 8,
+                            "line": 4,
+                            "offset": 22
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "echoes-player/src/assets/icon/icon.html",
+            "start": {
+                "col": 3,
+                "line": 4,
+                "offset": 17
+            }
+        },
+        {
+            "check_id": "html.security.audit.missing-integrity.missing-integrity",
+            "TP": 0,
+            "FP": 1,            
+            "end": {
+                "col": 122,
+                "line": 95,
+                "offset": 2174
+            },
+            "extra": {
+                "engine_kind": "OSS",
+                "fingerprint": "e39f3bdc0d200eb5d80ddbd13e3d771c8a9f3e210439323005f4286a50ec42a77688ec437281af70413fd7ea60baca9f591cffbcecd892d9ff2ee9b60a7f3649_0",
+                "is_ignored": false,
+                "lines": "    <link rel=\"stylesheet\" href=\"https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css\">",
+                "message": "This tag is missing an 'integrity' subresource integrity attribute. The 'integrity' attribute allows for the browser to verify that externally hosted files (for example from a CDN) are delivered without unexpected manipulation. Without this attribute, if an attacker can modify the externally hosted resource, this could lead to XSS and other types of attacks. To prevent this, include the base64-encoded cryptographic hash of the resource (file) you\u2019re telling the browser to fetch in the 'integrity' attribute for all externally hosted files.",
+                "metadata": {
+                    "category": "security",
+                    "confidence": "LOW",
+                    "cwe": [
+                        "CWE-353: Missing Support for Integrity Check"
+                    ],
+                    "impact": "LOW",
+                    "license": "Commons Clause License Condition v1.0[LGPL-2.1-only]",
+                    "likelihood": "LOW",
+                    "owasp": [
+                        "A08:2021 - Software and Data Integrity Failures"
+                    ],
+                    "references": [
+                        "https://owasp.org/Top10/A08_2021-Software_and_Data_Integrity_Failures"
+                    ],
+                    "semgrep.dev": {
+                        "rule": {
+                            "origin": "community",
+                            "r_id": 13728,
+                            "rule_id": "AbUQzj",
+                            "rv_id": 833890,
+                            "url": "https://semgrep.dev/playground/r/nWTy4vO/html.security.audit.missing-integrity.missing-integrity",
+                            "version_id": "nWTy4vO"
+                        }
+                    },
+                    "shortlink": "https://sg.run/krXA",
+                    "source": "https://semgrep.dev/r/html.security.audit.missing-integrity.missing-integrity",
+                    "subcategory": [
+                        "audit"
+                    ],
+                    "technology": [
+                        "html"
+                    ],
+                    "vulnerability_class": [
+                        "Cryptographic Issues"
+                    ]
+                },
+                "metavars": {
+                    "$...A": {
+                        "abstract_content": " rel=\"stylesheet\" href=\"https://maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome-font-awesome.min.css\"",
+                        "end": {
+                            "col": 121,
+                            "line": 95,
+                            "offset": 2173
+                        },
+                        "start": {
+                            "col": 10,
+                            "line": 95,
+                            "offset": 2062
+                        }
+                    }
+                },
+                "severity": "WARNING",
+                "validation_state": "NO_VALIDATOR"
+            },
+            "path": "echoes-player/src/index.html",
+            "start": {
+                "col": 5,
+                "line": 95,
+                "offset": 2057
+            }
+        }
+    ],
+    "skipped_rules": [],
+    "version": "1.90.0"
+}
